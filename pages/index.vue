@@ -1,49 +1,55 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        Thunderstone Quest Randomizer
-      </h1>
-      <h2 class="subtitle">
-        informal
-      </h2>
-    </div>
-  </div>
+  <section>
+    <h1 class="header">Thunderstone QUEST : informal randamizer</h1>
+    
+    <button @click="shuffleAll">Shuffle All</button>
+
+    <RandomSetup :store="marcketplace" type="Marcketplace"></RandomSetup>
+    <RandomSetup :store="hero" type="Hero"></RandomSetup>
+    <RandomSetup :store="monster" type="Monster"></RandomSetup>
+  </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {
+  Component,
+  Vue
+} from "nuxt-property-decorator"
+import { State } from "vuex-class"
+import { Card } from "~/types";
+import GameElement from "~/components/GameElement.vue"
+import RandomSetup from "~/components/RandomSetup.vue"
+
+@Component({
   components: {
-    //Logo
+    GameElement,
+    RandomSetup
+  }
+})
+export default class extends Vue {
+  @State hero!: Card;
+  @State marcketplace!: Card;
+  @State monster!: Card;
+
+  mounted(){
+    this.shuffleAll();
+  }
+
+  shuffleAll(){
+    this.$store.dispatch("hero/shuffle");
+    this.$store.dispatch("marcketplace/shuffle");
+    this.$store.dispatch("monster/shuffle");
   }
 }
 </script>
 
 <style scoped>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+.header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 30px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 25px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  flex-wrap: wrap;
 }
 </style>
