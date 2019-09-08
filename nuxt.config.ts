@@ -1,3 +1,10 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: "/thunderstone-quest-randomizer/",
+  },
+} : {};
+
+
 export default {
   env: {},
   head: {
@@ -18,5 +25,6 @@ export default {
   modules: [
     "@nuxtjs/axios",
   ],
-  axios: {}
+  axios: {},
+  ...routerBase,
 }

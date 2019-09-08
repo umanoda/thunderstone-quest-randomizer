@@ -14,7 +14,8 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "generate": "nuxt-ts generate",
+    "generate:gh-page": "DEPLOY_ENV=GH_PAGES nuxt-ts generate"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.2.0",
