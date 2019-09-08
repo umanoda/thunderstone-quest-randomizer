@@ -1,10 +1,12 @@
 <template>
-  <div class="card" :class="card.card_type">
-    <h3>{{card.name}}</h3>
-    <span v-for="tag in card.tags" :key="tag">
-      [{{tag}}]
-    </span>
-  </div>
+  <li class="card" :class="card.card_type">
+    <span class="title">{{card.name}}</span>
+    <div class="tag">
+      <span v-for="tag in card.tags" :key="tag">
+        [{{tag}}]
+      </span>
+    </div>
+  </li>
 </template>
 
 <script lang="ts">
@@ -28,6 +30,11 @@ export default class GameElement extends Vue {
   padding: 1rem;
   margin: 0.25rem;
   border: 0.25rem solid gainsboro;
+  list-style-type: none;
+}
+.card .title{
+  size: 1.2em;
+  font-weight: bold;
 }
 .weapon {
   border-color: yellow;

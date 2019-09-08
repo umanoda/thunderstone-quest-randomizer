@@ -3,11 +3,13 @@
     <h2>{{type}}</h2>
     <button @click="shuffle">Shuffle</button>
     <div class="cards">
-      <GameElement
-        v-for="s in store.cards"
-        :key="s.id()"
-        :card="s"
-      ></GameElement>
+      <ul>
+        <GameElement
+          v-for="s in store.cards"
+          :key="s.id()"
+          :card="s"
+        ></GameElement>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,7 +33,6 @@ export default class extends Vue {
   @Prop() type!: string;
 
   shuffle() {
-    console.log(`${this.type.toLowerCase()}/shuffle`)
     this.$store.dispatch(`${this.type.toLowerCase()}/shuffle`);
   }
 }
