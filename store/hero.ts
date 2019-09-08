@@ -1,5 +1,5 @@
 import { CardState, Card } from "~/types";
-import { MutationTree, ActionTree, Commit } from "vuex";
+import { MutationTree, ActionTree } from "vuex";
 
 const candidate = {
   weapons: ["Short Sword**", "Mace**", "Long Sword**", "Halberd**", "Axe**", "Shortsear**"],
@@ -21,19 +21,19 @@ const _sample = (arr: string[]): Card => {
     return new Card(name, [], "hero");
 };
 
-const _shuffle = (commit: Commit) => {
-    const cards = [
-        new Card("Hero 1", ["HUMAN","FIGHTER"], "hero"),
-        new Card("Hero 2", ["HUMAN","MAGICIAN"], "hero"),
-        new Card("Hero 3", ["ELF","CLERIC"], "hero"),
-        new Card("Hero 4", ["HUMAN","FIGHTER","ROAGE"], "hero"),
+const _shuffle = () => {
+    return  [
+        new Card("Hero 1**", ["HUMAN","FIGHTER"], "hero"),
+        new Card("Hero 2**", ["HUMAN","MAGICIAN"], "hero"),
+        new Card("Hero 3**", ["ELF","CLERIC"], "hero"),
+        new Card("Hero 4**", ["HUMAN","FIGHTER","ROAGE"], "hero"),
     ];
-    commit("setCards", cards);
 }
 
 const actions: ActionTree<CardState, CardState> = {
     shuffle({ commit }) {
-        _shuffle(commit);
+        const cards = _shuffle();
+        commit("setCards", cards);
     },
 };
 export default {
