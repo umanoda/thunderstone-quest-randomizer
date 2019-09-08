@@ -15,11 +15,13 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "generate:gh-page": "DEPLOY_ENV=GH_PAGES nuxt-ts generate && mv dist docs"
+    "generate:gh-page": "DEPLOY_ENV=GH_PAGES nuxt-ts generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.2.0",
     "@types/node": "10.14.17",
-    "@types/webpack-env": "1.14.0"
+    "@types/webpack-env": "1.14.0",
+    "push-dir": "^0.4.1"
   }
 }
