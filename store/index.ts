@@ -3,4 +3,4 @@ import hero from "~/store/hero";
 import marcketplace from "~/store/marcketplace";
 import monster from "~/store/monster";
 
-export const modules = {hero, marcketplace, monster};
+export const modules = { hero, marcketplace, monster };

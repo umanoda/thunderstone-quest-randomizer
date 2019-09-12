@@ -2,8 +2,8 @@
   <li class="card" :class="card.card_type">
     <span class="title">{{card.name}}</span>
     <div class="tag">
-      <span v-for="tag in card.tags" :key="tag">
-        [{{tag}}]
+      <span>
+        {{ card.tags.join(", ") }}
       </span>
     </div>
   </li>
