@@ -7,29 +7,43 @@ type Candidate = {
 }
 
 const candidates : Candidate[] = [
-  { name: "Hero 1**", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Hero 2**", tags: ["HUMAN", "MAGICIAN"] },
-  { name: "Hero 3**", tags: ["HUMAN", "CLERIC"] },
-  { name: "Hero 4**", tags: ["HUMAN", "FIGHTER", "ROAGE"] },
-  { name: "Hero 5**", tags: ["HUMAN", "ROAGE"] },
-  { name: "Hero 6**", tags: ["HUMAN", "FIGHTER", "MAGICIAN"] },
-  { name: "Hero 7**", tags: ["HUMAN", "MAGICIAN", "CLERIC"] },
-  { name: "Hero 8**", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Hero 9**", tags: ["HUMAN", "MAGICIAN"] },
-  { name: "Hero 10**", tags: ["HUMAN", "CLERIC"] },
-  { name: "Hero 11**", tags: ["HUMAN", "ROAGE"] },
-  { name: "Hero 12**", tags: ["HUMAN", "ROAGE", "MAGICIAN"] },
-  { name: "Hero 13**", tags: ["HUMAN", "ROAGE", "CLERIC"] },
-  { name: "Hero 14**", tags: ["HUMAN", "MAGICIAN"] },
-  { name: "Hero 15**", tags: ["HUMAN", "CLERIC", "MAGICIAN"] },
-  { name: "Hero 16**", tags: ["HUMAN", "FIGHTER", "MAGICIAN"] },
-  { name: "Hero 17**", tags: ["HUMAN", "FIGHTER", "CLERIC"] },
-  { name: "Hero 18**", tags: ["HUMAN", "MAGICIAN"] },
-  { name: "Hero 19**", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Aird", tags: ["HUMAN", "ROGUE"] },
+  { name: "Arcanian", tags: ["HUMAN", "WIZARD"] },
+  { name: "Avania", tags: ["CELESTIAL", "HUMAN", "CLERIC"] },
+  { name: "Baharan ", tags: ["TRITON ", "CLERIC"] },
+  { name: "Brimstone ", tags: ["DWARF", "ROGUE "] },
+  { name: "Darameric", tags: ["ELF", " CLERIC", " WIZARD "] },
+  { name: "Darkrend", tags: ["HUMAN", "WIZARD"] },
+  { name: "Dunardic", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Edlin", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Ehrlingal", tags: ["HALFLING", "ROGUE"] },
+  { name: "Felin", tags: ["ELF", "CLERIC", "WIZARD"] },
+  { name: "Gendarme ", tags: ["DWARF", "WIZARD"] },
+  { name: "Grimwolf", tags: ["UNDEAD", "HUMAN", "FIGHTER"] },
+  { name: "Gorlandor", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Hawkswood ", tags: ["AVIAN", "ELF", "ROGUE"] },
+  { name: "Honormain", tags: ["HUMAN", "CLERIC"] },
+  { name: "Linsha", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Markennan ", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Moonblades", tags: ["HUMAN", "FIGHTER", "ROGUE"] },
+  { name: "Nimblefingers", tags: ["ELF", "ROGUE"] },
+  { name: "Outlands", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Pylorian ", tags: ["HUMAN", "WIZARD"] },
+  { name: "Regian", tags: ["HUMAN", " CLERIC "] },
+  { name: "Regalen", tags: ["ELF", "WIZARD"] },
+  { name: "Scathian", tags: ["HALFLING", "ROGUE", "WIZARD"] },
+  { name: "Sephilest ", tags: ["ELF", "FIGHTER"] },
+  { name: "Silverhelm", tags: ["DWARF", "CLERIC", "FIGHTIR"] },
+  { name: "Stormhand", tags: ["DWARE", "FIGHTER"] },
+  { name: "Stormskull", tags: ["HUMAN", "ORC", "WIZARD"] },
+  { name: "Stalker", tags: ["ELF", "ROGUE"] },
+  { name: "Terakian", tags: ["HUMAN", "CLERIC", "FIGHTER"] },
+  { name: "The Yellow Knight", tags: ["HUMAN", "FIGHTER"] },
+  { name: "Veris", tags: ["ELF", "WIZARD"] },
 ];
 
 
-const state = (): CardState => ({ cards: [] }) 
+const state = (): CardState => ({ cards: [] })
 
 const mutations: MutationTree<CardState> = {
   setCards(state: CardState, cards: Card[]): void {
@@ -39,7 +53,7 @@ const mutations: MutationTree<CardState> = {
 
 
 const _sample = (arr: Candidate[]): Card => {
-  const get_index = Math.floor(Math.random() * arr.length) 
+  const get_index = Math.floor(Math.random() * arr.length)
   const card = arr[get_index];
   arr.splice(get_index, 1)
   return new Card(card.name, card.tags, "hero");
