@@ -25,7 +25,7 @@ const candidates : Candidate[][] = [
     { name: "CORRUPTED ELF" },
     { name: "ELEMENTAL", tags: ["TORMENT"] },
     { name: "FIRE SERVITOR" },
-    { name: "FOUNDATIONAL", tags: ["HUMANOID・KEEPER・ELEMENTAL・GIANT"] },
+    { name: "FOUNDATIONAL", tags: ["HUMANOID","KEEPER","ELEMENTAL","GIANT"] },
     { name: "HOBGOBLINBRUTE", tags: ["HUMANOID"] },
     { name: "SPIDER VERMIN TERROR", tags: ["GIANT"] },
     { name: "MINION OF CHAOS", tags: ["DEMON"] },

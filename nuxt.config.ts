@@ -4,6 +4,20 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   },
 } : {};
 
+const manifest = {
+  name: "thunderstone-quest-randomizer",
+  title: "thunderstone-quest-randomizer",
+  'og:title': 'thunderstone-quest-randomizer',
+  description: '',
+  'og:description': '',
+  lang: 'ja',
+  theme_color: "#529b58",
+  background_color: "#bde0c0",
+  display: "standalone",
+  scope: "/",
+  start_url: "/category"
+}
+
 
 export default {
   env: {},
@@ -23,8 +37,10 @@ export default {
   build: {},
   buildModules: ["@nuxt/typescript-build"],
   modules: [
+    [ '@nuxtjs/pwa', { icon: false } ] ,
     "@nuxtjs/axios",
   ],
   axios: {},
+  manifest,
   ...routerBase,
 }
