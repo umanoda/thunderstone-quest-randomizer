@@ -17,8 +17,7 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "generate:gh-page": "DEPLOY_ENV=GH_PAGES nuxt-ts generate",
-    "deploy": "npm run generate:gh-page && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "DEPLOY_ENV=GH_PAGES npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.2.0",
