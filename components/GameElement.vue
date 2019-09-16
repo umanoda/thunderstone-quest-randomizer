@@ -30,7 +30,8 @@ export default class GameElement extends Vue {
     sans-serif;
   padding: 1rem;
   margin: 0.25rem;
-  border: 0.25rem solid gainsboro;
+  border: 0.25rem solid #010203;
+  border-radius: 5px;
   list-style-type: none;
 }
 .tsq-card .card_name{
@@ -38,18 +39,43 @@ export default class GameElement extends Vue {
   font-weight: bold;
 }
 .tsq-weapon {
-  border-color: yellow;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+66,fbdf93+100 */
+background: #f9f9f9; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #f9f9f9 66%, #fbdf93 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#f9f9f9 66%,#fbdf93 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#f9f9f9 66%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
 }
 .tsq-magic {
-  border-color: violet;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+66,ed8bc7+100 */
+background: #f9f9f9; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #f9f9f9 66%, #ed8bc7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#f9f9f9 66%,#ed8bc7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#f9f9f9 66%,#ed8bc7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ed8bc7',GradientType=0 ); /* IE6-9 */
 }
 .tsq-item {
-  border-color: green;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+66,7cd37c+100 */
+background: #f9f9f9; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #f9f9f9 66%, #7cd37c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#f9f9f9 66%,#7cd37c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#f9f9f9 66%,#7cd37c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#7cd37c',GradientType=0 ); /* IE6-9 */
 }
 .tsq-hero {
-  border-color: blue;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+66,6d9de0+100 */
+background: #f9f9f9; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #f9f9f9 66%, #6d9de0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#f9f9f9 66%,#6d9de0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#f9f9f9 66%,#6d9de0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#6d9de0',GradientType=0 ); /* IE6-9 */
 }
 .tsq-monster {
-  border-color: red;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+66,f40e1e+100 */
+background: #f9f9f9; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #f9f9f9 66%, #f40e1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#f9f9f9 66%,#f40e1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#f9f9f9 66%,#f40e1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f40e1e',GradientType=0 ); /* IE6-9 */
 }
 </style>
