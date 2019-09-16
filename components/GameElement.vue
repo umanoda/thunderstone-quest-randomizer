@@ -1,12 +1,12 @@
 <template>
-  <li class="card" :class="card.card_type">
+  <div class="card" :class="card.card_type">
     <span class="title">{{card.name}}</span>
     <div class="tag">
       <span>
         {{ card.tags.join(", ") }}
       </span>
     </div>
-  </li>
+  </div>
 </template>
 
 <script lang="ts">

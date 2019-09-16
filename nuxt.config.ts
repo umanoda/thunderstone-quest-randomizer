@@ -29,7 +29,8 @@ export default {
       { hid: "description", name: "description", content: "Nuxt.js TypeScript project" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" },
     ]
   },
   loading: { color: "#3B8070" },
