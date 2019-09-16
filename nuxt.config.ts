@@ -40,6 +40,7 @@ export default {
   modules: [
     [ '@nuxtjs/pwa', { icon: false } ] ,
     "@nuxtjs/axios",
+    "@nuxtjs/bulma",
   ],
   axios: {},
   manifest,

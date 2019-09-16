@@ -1,9 +1,9 @@
 <template>
-  <div class="card" :class="card.card_type">
-    <span class="title">{{card.name}}</span>
-    <div class="tag">
-      <span>
-        {{ card.tags.join(", ") }}
+  <div class="tsq-card" :class="'tsq-'+card.card_type">
+    <span class="card_name">{{card.name}}</span>
+    <div class="tags" v-if="card.tags.length">
+      <span class="tag" v-for="tag in card.tags">
+        {{ tag }}
       </span>
     </div>
   </div>
@@ -24,7 +24,8 @@ export default class GameElement extends Vue {
 </script>
 
 <style scoped>
-.card {
+/* tsq = Thunder Stone Quest */
+.tsq-card {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
   padding: 1rem;
@@ -32,23 +33,23 @@ export default class GameElement extends Vue {
   border: 0.25rem solid gainsboro;
   list-style-type: none;
 }
-.card .title{
+.tsq-card .card_name{
   size: 1.2em;
   font-weight: bold;
 }
-.weapon {
+.tsq-weapon {
   border-color: yellow;
 }
-.magic {
+.tsq-magic {
   border-color: violet;
 }
-.item {
+.tsq-item {
   border-color: green;
 }
-.hero {
+.tsq-hero {
   border-color: blue;
 }
-.monster {
+.tsq-monster {
   border-color: red;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>
+  <div class="section">
+    <h2 class="subtitle">
       {{type}}
       <button class="button" @click="shuffle">
         <i class="fas fa-sync-alt"></i>

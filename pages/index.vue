@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="header">Thunderstone QUEST : informal randamizer</h1>
+    <h1 class="title header">Thunderstone QUEST : informal randamizer</h1>
 
     <button class="button" @click="shuffleAll">
       <i class="fas fa-sync-alt">ALL</i>
@@ -44,13 +44,6 @@ export default class extends Vue {
   }
 }
 </script>
-
-<style>
-.fas {
-  font-size: 1.5em;
-  padding: 4px;
-}
-</style>
 
 <style scoped>
 .header {
