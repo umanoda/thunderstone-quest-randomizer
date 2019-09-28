@@ -28,7 +28,7 @@ const manifest = {
   start_url: "/thunderstone-quest-randomizer/",
   icons: [
     {
-      src: `${routerBase.router.base}static/ic_louncher.png`,
+      src: `${routerBase.router.base}ic_launcher.png`,
       sizes: "192x192",
       type: "image/png"
     }
