@@ -46,12 +46,17 @@ export default {
   css: ["~/assets/css/main.css"],
   build: {},
   buildModules: ["@nuxt/typescript-build"],
+  pwa: {
+    workbox: {
+      dev: true
+    },
+    manifest,
+  },
   modules: [
     [ '@nuxtjs/pwa', { icon: false } ] ,
     "@nuxtjs/axios",
     "@nuxtjs/bulma",
   ],
   axios: {},
-  manifest,
   ...routerBase,
 }
