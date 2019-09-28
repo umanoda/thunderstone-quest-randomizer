@@ -1,53 +1,54 @@
-import { CardState, Card } from "~/types";
+import { CardState, Card, EXPANTION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
+type Job ='FIGHTER' | 'ROGUE' | 'WIZARD' | 'CLERIC';
 type Candidate = {
   name: string;
-  tags: string[];
+  tags: Job[];
 }
 
-const candidates : Candidate[] = [
-  { name: "Aird", tags: ["HUMAN", "ROGUE"] },
-  { name: "Arcanian", tags: ["HUMAN", "WIZARD"] },
-  { name: "Avania", tags: ["CELESTIAL", "HUMAN", "CLERIC"] },
-  { name: "Baharan ", tags: ["TRITON ", "CLERIC"] },
-  { name: "Brimstone ", tags: ["DWARF", "ROGUE "] },
-  { name: "Darameric", tags: ["ELF", " CLERIC", " WIZARD "] },
-  { name: "Darkrend", tags: ["HUMAN", "WIZARD"] },
-  { name: "Dunardic", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Edlin", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Ehrlingal", tags: ["HALFLING", "ROGUE"] },
-  { name: "Felin", tags: ["ELF", "CLERIC", "WIZARD"] },
-  { name: "Gendarme ", tags: ["DWARF", "WIZARD"] },
-  { name: "Grimwolf", tags: ["UNDEAD", "HUMAN", "FIGHTER"] },
-  { name: "Gorlandor", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Hawkswood ", tags: ["AVIAN", "ELF", "ROGUE"] },
-  { name: "Honormain", tags: ["HUMAN", "CLERIC"] },
-  { name: "Linsha", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Markennan ", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Moonblades", tags: ["HUMAN", "FIGHTER", "ROGUE"] },
-  { name: "Nimblefingers", tags: ["ELF", "ROGUE"] },
-  { name: "Outlands", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Pylorian ", tags: ["HUMAN", "WIZARD"] },
-  { name: "Regian", tags: ["HUMAN", " CLERIC "] },
-  { name: "Regalen", tags: ["ELF", "WIZARD"] },
-  { name: "Scathian", tags: ["HALFLING", "ROGUE", "WIZARD"] },
-  { name: "Sephilest ", tags: ["ELF", "FIGHTER"] },
-  { name: "Silverhelm", tags: ["DWARF", "CLERIC", "FIGHTIR"] },
-  { name: "Stormhand", tags: ["DWARE", "FIGHTER"] },
-  { name: "Stormskull", tags: ["HUMAN", "ORC", "WIZARD"] },
-  { name: "Stalker", tags: ["ELF", "ROGUE"] },
-  { name: "Terakian", tags: ["HUMAN", "CLERIC", "FIGHTER"] },
-  { name: "The Yellow Knight", tags: ["HUMAN", "FIGHTER"] },
-  { name: "Veris", tags: ["ELF", "WIZARD"] },
-];
-
+const DECK: {[k in EXPANTION]: Candidate[]} = {
+  "#1": [
+    { name: "Grolandor", tags: ["FIGHTER"] },
+    { name: "Hawkswood ", tags: ["ROGUE"] },
+    { name: "Pylorian ", tags: ["WIZARD"] },
+    { name: "Scathian", tags: ["ROGUE", "WIZARD"] },
+    { name: "Silverhelm", tags: ["CLERIC", "FIGHTER"] },
+    { name: "Stormhand", tags: ["FIGHTER"] },
+  ],
+  "#2": [
+  ],
+  "#3": [
+    { name: "Baharan ", tags: ["CLERIC"] },
+    { name: "Darameric", tags: ["CLERIC", "WIZARD"] },
+    { name: "Linsha", tags: [ "FIGHTER"] },
+    { name: "Markennan ", tags: ["FIGHTER"] },
+    { name: "Nimblefingers", tags: ["ROGUE"] },
+    { name: "Regalen", tags: ["WIZARD"] },
+  ],
+  "#4": [
+    { name: "Darkrend", tags: ["WIZARD"] },
+    { name: "Grimwolf", tags: ["FIGHTER"] },
+    { name: "Honormain", tags: ["CLERIC"] },
+    { name: "Jadress", tags: ["ROGUE"] },
+    { name: "Moonblades", tags: ["FIGHTER", "ROGUE"] },
+    { name: "Stormskull", tags: ["WIZARD"] },
+  ],
+  "#5": [
+    { name: "Aird", tags: ["ROGUE"] },
+    { name: "Arcanian", tags: ["WIZARD"] },
+    { name: "Dunardic", tags: ["FIGHTER"] },
+    { name: "Regian", tags: ["CLERIC"] },
+    { name: "Terakian", tags: ["CLERIC", "FIGHTER"] },
+    { name: "Veris", tags: ["WIZARD"] },
+  ]
+}
 
 const state = (): CardState => ({ cards: [] })
 
 const mutations: MutationTree<CardState> = {
   setCards(state: CardState, cards: Card[]): void {
-    state.cards = cards;
+        state.cards = cards;
   }
 };
 
@@ -60,41 +61,46 @@ const _sample = (arr: Candidate[]): Card => {
 };
 
 const _shuffle = () => {
-  let temp_candidates = Array.from(candidates);
-  let cards = []
-  for(let i = 0;  i < 4; i++) {
-      cards.push(_sample(temp_candidates));
+  let cards: Card[] = []
+  const candidates: Candidate[] = DECK["#1"].concat(DECK["#3"], DECK["#4"], DECK["#5"]);
+  if (candidates.length < 4) {
+    console.error("card is less");
+    return cards;
   }
-  return  cards;
+  let temp_candidates = Array.from(candidates);
+  for (let i = 0; i < 4; i++) {
+    cards.push(_sample(temp_candidates));
+  }
+  return cards;
 }
 
-const _checkHeroJobs = (cards: Candidate[]) => {
-  let counter: { [key: string]: number} =  {
-    "FIGHTER": 0,
-    "ROGUE": 0,
-    "WIZARD": 0,
-    "CLERIC": 0,
+const _checkHeroJobs = (cards: Card[]) => {
+  let counter: { [k in Job]: number } = {
+    FIGHTER: 0,
+    ROGUE: 0,
+    WIZARD: 0,
+    CLERIC: 0,
   };
   for (let card of cards) {
     for (let jobName in counter) {
-      if(card.tags.includes(jobName)) counter[jobName]++;
+      if (card.tags.includes(jobName as Job)) counter[jobName as Job]++;
     }
   }
 
   // Check: Are all jobs appeared ?
   for (let jobName in counter) {
-    if(counter[jobName] < 1) return false;
+    if (counter[jobName as Job] < 1) return false;
   }
   return true;
 };
 
 const actions: ActionTree<CardState, CardState> = {
   shuffle({ commit }) {
-    let cards: Candidate[] = []
+    let cards: Card[] = []
     let i = 0
-    while(!_checkHeroJobs(cards)) {
+    while (!_checkHeroJobs(cards)) {
       cards = _shuffle();
-      if(i++ > 10000) {
+      if (i++ > 10000) {
         console.error("counter out");
         break; // against for infinity loop
       }

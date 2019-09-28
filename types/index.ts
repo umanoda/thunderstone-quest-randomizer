@@ -1,5 +1,7 @@
 export * from './state';
 
+export type EXPANTION = '#1'|'#2'|'#3'|'#4'|'#5';
+
 export type CARD_TYPE = "weapon" | "magic" | "item" | "hero" | "monster"; 
 
 export interface CardStore {
