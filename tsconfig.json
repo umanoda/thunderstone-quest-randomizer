@@ -13,6 +13,7 @@
     "sourceMap": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
+    "allowJs": true,
     "noEmit": true,
     "baseUrl": ".",
     "resolveJsonModule": true,
@@ -22,7 +23,8 @@
     "types": [
       "@types/node",
       "@types/webpack-env",
-      "@nuxt/types"
+      "@nuxt/types",
+      "@nuxt/vue-app"
     ]
   }
 }

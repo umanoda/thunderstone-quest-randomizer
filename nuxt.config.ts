@@ -2,8 +2,16 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: "/thunderstone-quest-randomizer/",
   },
-  mode: 'spa'
-} : {};
+  mode: 'spa',
+  devtools: false,
+  vue: {
+    config: {
+      productionTip: false
+    }
+  }
+} : {
+  mode: "spa"
+};
 
 const manifest = {
   name: "thunderstone-quest-randomizer",

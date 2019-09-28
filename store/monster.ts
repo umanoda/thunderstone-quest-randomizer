@@ -1,4 +1,4 @@
-import { CardState, Card } from "~/types";
+import { RootState, CardState, Card } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
 type Candidate = {
@@ -66,7 +66,7 @@ const _shuffle = () => {
     ];
 }
 
-const actions: ActionTree<CardState, CardState> = {
+const actions: ActionTree<CardState, RootState> = {
     shuffle({ commit }) {
         const cards = _shuffle();
         commit("setCards", cards);

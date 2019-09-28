@@ -1,4 +1,4 @@
-import { CardState, Card, EXPANTION } from "~/types";
+import { RootState, CardState, Card, EXPANTION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
 type Job ='FIGHTER' | 'ROGUE' | 'WIZARD' | 'CLERIC';
@@ -56,9 +56,9 @@ const _sample = (arr: Candidate[]): Card => {
   return new Card(card.name, card.tags, "hero");
 };
 
-const _shuffle = () => {
+const _shuffle = (expansionRegexp: RegExp) => {
   let cards: Card[] = []
-  const candidates: Candidate[] = DECK.filter(candidate => candidate.expantion.match(/^#(1|2|3|4|5)$/));
+  const candidates: Candidate[] = DECK.filter(candidate => candidate.expantion.match(expansionRegexp));
   if (candidates.length < 4) {
     console.error("card is less");
     return cards;
@@ -90,12 +90,13 @@ const _checkHeroJobs = (cards: Card[]) => {
   return true;
 };
 
-const actions: ActionTree<CardState, CardState> = {
-  shuffle({ commit }) {
+const actions: ActionTree<CardState, RootState> = {
+  shuffle({ commit, rootGetters }) {
     let cards: Card[] = []
     let i = 0
+    let expansionRegexp = rootGetters["expansion/regexp"];
     while (!_checkHeroJobs(cards)) {
-      cards = _shuffle();
+      cards = _shuffle(expansionRegexp);
       if (i++ > 10000) {
         console.error("counter out");
         break; // against for infinity loop

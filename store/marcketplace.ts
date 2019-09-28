@@ -1,4 +1,4 @@
-import { CardState, Card, CARD_TYPE } from "~/types";
+import { RootState, CardState, Card, CARD_TYPE } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
 const candidate = {
@@ -101,7 +101,7 @@ const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number) => {
   return  cards;
 }
 
-const actions: ActionTree<CardState, CardState> = {
+const actions: ActionTree<CardState, RootState> = {
   shuffle({ commit }) {
     const weapons: Card[] = _shuffle("weapon", 3);
     const magics: Card[] = _shuffle("magic", 3);
@@ -110,6 +110,7 @@ const actions: ActionTree<CardState, CardState> = {
     commit("setCards", [...weapons, ...magics, ...items]);
   },
 };
+
 export default {
   namespace: true,
   state,

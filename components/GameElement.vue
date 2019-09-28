@@ -2,7 +2,7 @@
   <div class="tsq-card" :class="'tsq-'+card.card_type">
     <span class="card_name">{{card.name}}</span>
     <div class="tags" v-if="card.tags.length">
-      <span class="tag" v-for="tag in card.tags">
+      <span class="tag" v-for="tag in card.tags" :key="`tsq-${card.name}-${tag}`">
         {{ tag }}
       </span>
     </div>
