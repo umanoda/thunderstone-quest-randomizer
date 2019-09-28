@@ -1,46 +1,58 @@
-import { RootState, CardState, Card } from "~/types";
+import { RootState, CardState, Card, EXPANTION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
+type SEED = "UNDEAD" | "DEMON"
 type Candidate = {
   name: string;
-  tags?: string[];
+  tags?: SEED[];
+  expantion: EXPANTION;
 }
 
 const candidates : Candidate[][] = [
   [
-    { name: "AIR SERVITOR", tags: ["ELEMENTAL"] },
-    { name: "BLACK ROCKBANDIT", tags: ["HUMANOID"] },
-    { name: "BOG ZOMBIE", tags: ["UNDEAD"] },
-    { name: "DOOMKNIGHT", tags: ["UNDEAD "] },
-    { name: "ENSNARING", tags: ["VINEPLANT"] },
-    { name: "GOBLIN GRUNT", tags: ["HUMANOID"] },
-    { name: "KOBOLD SKIRMISHER", tags: ["HUMANOID"] },
-    { name: "GNOLL RAIDER", tags: ["HUMANOID"] },
-    { name: "TWISTED CREATURE", tags: ["BEAST "] },
-    { name: "WOODLAND SPRITE", tags: ["FEY"] },
-    { name: "WATER SERVITOR", tags: ["ELEMENTAL"] },
+    // #1
+    { name: "Goblin Grunts", expantion: "#1"},
+    { name: "Kobold Skirmishers", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Bog Zombies", tags: ["UNDEAD"], expantion: "#3" },
+    { name: "Ensnaring Vines", expantion: "#3" },
+    // #4
+    { name: "Air Servitors", expantion: "#4" },
+    { name: "Water Servitors", expantion: "#4" },
+    // #5
+    { name: "Gnoll Raiders", expantion: "#5" },
+    { name: "Dommknighys", tags: ["UNDEAD"], expantion: "#5" },
   ],
   [
-    { name: "CHAOS LIZARDH", tags: ["UMANOID"] },
-    { name: "CORRUPTED ELF" },
-    { name: "ELEMENTAL", tags: ["TORMENT"] },
-    { name: "FIRE SERVITOR" },
-    { name: "FOUNDATIONAL", tags: ["HUMANOID","KEEPER","ELEMENTAL","GIANT"] },
-    { name: "HOBGOBLINBRUTE", tags: ["HUMANOID"] },
-    { name: "SPIDER VERMIN TERROR", tags: ["GIANT"] },
-    { name: "MINION OF CHAOS", tags: ["DEMON"] },
-    { name: "MOORSKELETON", tags: ["UNDEAD"] },
+    // #1
+    { name: "Hobgoblin Brutes", expantion: "#1"},
+    { name: "Spider Terror", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Moor Skeletons", tags: ["UNDEAD"] , expantion: "#3" },
+    { name: "Chaos Lizards", expantion: "#3" },
+    // #4
+    { name: "Fire Priest", expantion: "#4"},
+    { name: "Earth Priest", expantion: "#4" },
+    // #5
+    { name: "Minions of Chaos", tags: ["DEMON"], expantion: "#5" },
+    { name: "Torments", expantion: "#5" },
   ],
   [
-    { name: "ABYSSALFOUNDER", tags: ["ELEMIENTAL","DEMON"] },
-    { name: "ANCIENT ADVENTURER", tags: ["UNDEAD"] },
-    { name: "CORRUPTEDCENTAUR", tags: ["BEAST","HUMANOID"] },
-    { name: "DIVINE FOUNDERE", tags: ["LEMENTAL","CELESTIAL"] },
-    { name: "GOBLIN KING'S", tags: ["GUARDHUMANOID"] },
-    { name: "GOLEM ANCIENT PROTECTOR" },
-    { name: "MARSH TROLL", tags: ["GIANT"] },
-    { name: "SWANP SPIRIT", tags: ["UNDEAD"] },
-    { name: "TREEFOLK", tags: ["GIANT", "PLANT"]},
+    // #1
+    { name: "Ancient Adventurers", tags: ["UNDEAD"], expantion: "#1" },
+    { name: "Goblin King's Guard", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Marsh Trolls", expantion: "#3" },
+    { name: "Swamp Sprits", tags: ["UNDEAD"], expantion: "#3" },
+    // #4
+    { name: "Abyssal Founders", expantion: "#4" },
+    { name: "Divine Founders", tags: ["DEMON"], expantion: "#4" },
+    // #5
+    { name: "Ancient Protectors", expantion: "#5" },
+    { name: "Ancient Wyrms", expantion: "#5" },
   ]
 ];
 
@@ -53,24 +65,26 @@ const mutations: MutationTree<CardState> = {
     }
 };
 
-const _sample = (arr: Candidate[]): Card => {
-    const card = arr[Math.floor(Math.random() * arr.length)];
+const _sample = (arr: Candidate[], expansionRegexp: RegExp): Card => {
+    const candidates = arr.filter(enemy => enemy.expantion.match(expansionRegexp));
+    const card = candidates[Math.floor(Math.random() * candidates.length)];
     return new Card(card.name, card.tags || [], "monster");
 };
 
-const _shuffle = () => {
+const _shuffle = (expansionRegexp: RegExp) => {
     return [
-        _sample(candidates[0]),
-        _sample(candidates[1]),
-        _sample(candidates[2]),
+        _sample(candidates[0], expansionRegexp),
+        _sample(candidates[1], expansionRegexp),
+        _sample(candidates[2], expansionRegexp),
     ];
 }
 
 const actions: ActionTree<CardState, RootState> = {
-    shuffle({ commit }) {
-        const cards = _shuffle();
-        commit("setCards", cards);
-    },
+  shuffle({ commit, rootGetters }) {
+    const expansionRegexp = rootGetters["expansion/regexp"];
+    const cards = _shuffle(expansionRegexp);
+    commit("setCards", cards);
+  },
 };
 export default {
     namespace: true,

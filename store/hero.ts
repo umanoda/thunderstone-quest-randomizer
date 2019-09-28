@@ -94,7 +94,7 @@ const actions: ActionTree<CardState, RootState> = {
   shuffle({ commit, rootGetters }) {
     let cards: Card[] = []
     let i = 0
-    let expansionRegexp = rootGetters["expansion/regexp"];
+    const expansionRegexp = rootGetters["expansion/regexp"];
     while (!_checkHeroJobs(cards)) {
       cards = _shuffle(expansionRegexp);
       if (i++ > 10000) {
