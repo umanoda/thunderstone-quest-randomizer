@@ -2,17 +2,18 @@
   <section>
     <h1 class="title header">Thunderstone QUEST : informal randamizer</h1>
 
-    <div class="section">
+    <div class="container">
+      <SelectExpansion />
       <button class="button" @click="shuffleAll">
         <i class="fas fa-sync-alt">ALL</i>
       </button>
     </div>
 
-    <SelectExpansion />
-
-    <RandomSetup :store="marcketplace" type="Marcketplace" />
-    <RandomSetup :store="hero" type="Hero" />
-    <RandomSetup :store="monster" type="Monster" />
+    <div class="container">
+      <RandomSetup :store="marcketplace" type="Marcketplace" />
+      <RandomSetup :store="hero" type="Hero" />
+      <RandomSetup :store="monster" type="Monster" />
+    </div>
   </section>
 </template>
 
@@ -45,9 +46,7 @@ export default class extends Vue {
   }
 
   shuffleAll(){
-    this.$store.dispatch("hero/shuffle");
-    this.$store.dispatch("marcketplace/shuffle");
-    this.$store.dispatch("monster/shuffle");
+    this.$store.dispatch("shuffleAll");
   }
 }
 </script>

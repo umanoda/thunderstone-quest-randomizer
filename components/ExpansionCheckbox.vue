@@ -1,5 +1,5 @@
 <template>
-  <label class="checkbox">
+  <label class="checkbox is-block">
     <input
       type="checkbox"
       :checked="checked"
@@ -37,7 +37,17 @@ export default class ExpansionCheckbox extends Vue {
 
   handleChange(val: any, val2: any) {
     this.checked = !this.checked
-    this.$store.commit("expansion/setUse", {expansionNumber: this.$props.expansion, enable: this.checked})
+    this.$store.dispatch("expansion/changeUseExpansion", {expansionNumber: this.$props.expansion, enable: this.checked})
   }
 }
 </script>
+
+<style>
+.checkbox {
+  padding-right: 8px;
+  color: rgb(243,235,235);
+}
+.checkbox:hover {
+  color: gray;
+}
+</style>

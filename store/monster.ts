@@ -65,17 +65,17 @@ const mutations: MutationTree<CardState> = {
     }
 };
 
-const _sample = (arr: Candidate[], expansionRegexp: RegExp): Card => {
+const _sample = (arr: Candidate[], level: number, expansionRegexp: RegExp): Card => {
     const candidates = arr.filter(enemy => enemy.expantion.match(expansionRegexp));
     const card = candidates[Math.floor(Math.random() * candidates.length)];
-    return new Card(card.name, card.tags || [], "monster", card.expantion);
+    return new Card(`Lv${level} ${card.name}`, card.tags || [], "monster", card.expantion);
 };
 
 const _shuffle = (expansionRegexp: RegExp) => {
     return [
-        _sample(candidates[0], expansionRegexp),
-        _sample(candidates[1], expansionRegexp),
-        _sample(candidates[2], expansionRegexp),
+        _sample(candidates[0], 1, expansionRegexp),
+        _sample(candidates[1], 2, expansionRegexp),
+        _sample(candidates[2], 3, expansionRegexp),
     ];
 }
 

@@ -29,7 +29,7 @@ export default class GameElement extends Vue {
 .tsq-card {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
-  padding: 6px;
+  padding: 8px;
   border: 2px solid #010203;
   border-radius: 5px;
   list-style-type: none;

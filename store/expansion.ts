@@ -1,5 +1,5 @@
-import { MutationTree, GetterTree } from "vuex";
-import { ExpansionState } from "~/types";
+import { MutationTree, ActionTree, GetterTree } from "vuex";
+import { ExpansionState,RootState } from "~/types";
 
 const state = (): ExpansionState => ({
   1: true,
@@ -15,6 +15,13 @@ const mutations: MutationTree<ExpansionState> = {
   }
 };
 
+const actions: ActionTree<ExpansionState, RootState> = {
+  changeUseExpansion({ commit, rootState }, payload: { expansionNumber: number, enable: boolean}) {
+    commit("setUse", { expansionNumber: payload.expansionNumber, enable: payload.enable });
+    this.dispatch("shuffleAll");
+  },
+};
+
 const getters: GetterTree<ExpansionState, ExpansionState> = {
   regexp (state: ExpansionState) {
     const enables = Object.entries(state).filter(x => x[1]).map(x => x[0]).join("|");
@@ -26,5 +33,6 @@ export default {
   namespace: true,
   state,
   mutations,
+  actions,
   getters
 };
