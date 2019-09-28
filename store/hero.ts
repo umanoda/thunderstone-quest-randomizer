@@ -71,8 +71,8 @@ const _shuffle = () => {
 const _checkHeroJobs = (cards: Candidate[]) => {
   let counter: { [key: string]: number} =  {
     "FIGHTER": 0,
-    "ROAGE": 0,
-    "MAGICIAN": 0,
+    "ROGUE": 0,
+    "WIZARD": 0,
     "CLERIC": 0,
   };
   for (let card of cards) {
@@ -94,8 +94,12 @@ const actions: ActionTree<CardState, CardState> = {
     let i = 0
     while(!_checkHeroJobs(cards)) {
       cards = _shuffle();
-      if(i++ > 100) break; // against for infinity loop
+      if(i++ > 10000) {
+        console.error("counter out");
+        break; // against for infinity loop
+      }
     }
+    console.info(`try ${i} times`);
     commit("setCards", cards);
   },
 };
