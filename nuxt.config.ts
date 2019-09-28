@@ -16,12 +16,13 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 const manifest = {
   name: "thunderstone-quest-randomizer",
+  short_name: "ThunderStoneQ Rand",
   title: "thunderstone-quest-randomizer",
   'og:title': 'thunderstone-quest-randomizer',
   description: '',
   'og:description': '',
   lang: 'ja',
-  theme_color: "#529b58",
+  theme_color: "#662344",
   background_color: "#bde0c0",
   display: "standalone",
   scope: "/",
