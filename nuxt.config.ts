@@ -8,7 +8,11 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
       productionTip: false
     }
   }
-} : {};
+} : {
+  router: {
+    base: "/",
+  },
+};
 
 const manifest = {
   name: "thunderstone-quest-randomizer",
@@ -21,7 +25,14 @@ const manifest = {
   background_color: "#bde0c0",
   display: "standalone",
   scope: "/",
-  start_url: "/thunderstone-quest-randomizer/"
+  start_url: "/thunderstone-quest-randomizer/",
+  icons: [
+    {
+      src: `${routerBase.router.base}static/ic_louncher.png`,
+      sizes: "192x192",
+      type: "image/png"
+    }
+  ]
 }
 
 
