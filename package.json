@@ -23,6 +23,9 @@
     "@nuxt/typescript-build": "0.2.0",
     "@types/node": "10.14.17",
     "@types/webpack-env": "1.14.0",
+    "eslint": "^6.4.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^5.0.0-beta.6",
     "push-dir": "^0.4.1"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "extends": ["vue", "plugin:vue/recommended"],
+  "env": {
+    "browser": true,
+  },
+  "rules": {
+    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
+  }
+}
