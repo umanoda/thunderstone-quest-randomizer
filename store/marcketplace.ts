@@ -1,81 +1,82 @@
-import { RootState, CardState, Card, CARD_TYPE } from "~/types";
+import { RootState, CardState, Card, CARD_TYPE, EXPANTION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
+type ITEM_TYPE = "weapon" | "magic" | "item";
+type Candidate = {
+  name: string;
+  expantion: EXPANTION;
+}
 
-const candidate = {
+const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
   weapon: [
-    "Battle Axe",
-    "Boomerang",
-    "Broads word",
-    "Crossbaw",
-    "Crystal Dagger",
-    "Cursed Mace",
-    "Flail",
-    "Hammer",
-    "Hand Axe",
-    "Holy Mace",
-    "King's Sword",
-    "Longbow",
-    "Longspear",
-    "Longsword",
-    "Maggi Staff",
-    "Maul",
-    "Punching Dagger",
-    "Quarterstaff",
-    "Rapier",
-    "Shortbow",
-    "Shortspear ",
-    "Shortsword",
-    "Two-Handed Sword",
+    // #1
+    { name: "Hummer", expantion: "#1" },
+    { name: "Maul", expantion: "#1" },
+    { name: "Shortbow", expantion: "#1" },
+    { name: "Shortsword", expantion: "#1" },
+    { name: "Shortspear", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Battle Axe", expantion: "#3" },
+    { name: "Boomerang", expantion: "#3" },
+    { name: "Crystal Dagger", expantion: "#3" },
+    { name: "Hory Mace", expantion: "#3" },
+    // #4
+    { name: "Broadsword", expantion: "#4" },
+    { name: "Crossbow", expantion: "#4" },
+    { name: "Flail", expantion: "#4" },
+    { name: "Two-Handed Sword", expantion: "#4" },
+    // #5
+    { name: "Cursed Mace", expantion: "#5" },
+    { name: "King's Sword", expantion: "#5" },
+    { name: "Longspear", expantion: "#5" },
+    { name: "Magi Staff", expantion: "#5" },
   ],
   magic: [
-    "Arcane Aura",
-    "Arcane Touch",
-    "Charm Monster",
-    "Consecration",
-    "Creeping Death",
-    "Dark Fire Touch",
-    "Death Pact",
-    "Enchant Weapons",
-    "Fireball",
-    "Form of the Juggernaut",
-    "Frost Bolt",
-    "Future Vision ",
-    "Lightning Bolt",
-    "Magic Missile",
-    "Mind Control",
-    "Mirror Image",
-    "Moonlight",
-    "Nature's Fury",
-    "Summon Storm",
-    "Tempest",
-    "True Seeing",
-    "Vampiric Touch",
+    // #1
+    { name: "Fireball", expantion: "#1" },
+    { name: "Future Vison", expantion: "#1" },
+    { name: "Magic Missile", expantion: "#1" },
+    { name: "Moonligh", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Arcane Aura", expantion: "#3" },
+    { name: "Charm Monster", expantion: "#3" },
+    { name: "Snchant Weapons", expantion: "#3" },
+    { name: "Vampiric Touch", expantion: "#3" },
+    // #4
+    { name: "Death Pact", expantion: "#4" },
+    { name: "Mirror Image", expantion: "#4" },
+    { name: "Tempest", expantion: "#4" },
+    { name: "True Seeing", expantion: "#4" },
+    // #5
+    { name: "Creeping Death", expantion: "#5" },
+    { name: "Frost Bolt", expantion: "#5" },
+    { name: "Mind Control", expantion: "#5" },
+    { name: "Summon Storm", expantion: "#5" },
   ],
   item: [
-    "Amulet of Infravision",
-    "Amulet of Power",
-    "Crystal of Scrying",
-    "Damilu Huskie",
-    "Daramere's Cloak",
-    "Elven Ring",
-    "Gem of Healing",
-    "Headband of Intellect",
-    "Holy Symbol",
-    "Lightstone Gem",
-    "Nature's Amulet",
-    "Necklace of Dawn",
-    "Potion of Light",
-    "Potion of Stamina",
-    "Ring of Learning",
-    "Ring of Proficiency",
-    "Ring of Spell Storing",
-    "Scionic Annals",
-    "Strength Gauntlets",
-    "Tome of Knowledge",
-    "Wand of Light",
+    // #1
+    { name: "Amulet of Infravision", expantion: "#1" },
+    { name: "Gem of Healing", expantion: "#1" },
+    { name: "Tom of Knowledge", expantion: "#1" },
+    // #2
+    // #3
+    { name: "Crystal of Scrying", expantion: "#3" },
+    { name: "Holy Symbol", expantion: "#3" },
+    { name: "Potion of Stamina", expantion: "#3" },
+    { name: "Ring of Learning", expantion: "#3" },
+    // #4
+    { name: "Damilu Huskie", expantion: "#4" },
+    { name: "Daramere's Cloak", expantion: "#4" },
+    { name: "Potion of Light", expantion: "#4" },
+    { name: "Ring of Proficiency", expantion: "#4" },
+    // #5
+    { name: "Amulet of Power", expantion: "#5" },
+    { name: "Lightstone Gem", expantion: "#5" },
+    { name: "Nature's Amulet", expantion: "#5" },
+    { name: "Ring of Spell Storing", expantion: "#5" },
   ]
-};
-
+}
 
 const state = (): CardState => ({ cards: [] })
 
@@ -85,15 +86,15 @@ const mutations: MutationTree<CardState> = {
   }
 };
 
-const _sample = (arr: string[], card_type: CARD_TYPE): Card => {
+const _sample = (arr: Candidate[], card_type: CARD_TYPE): Card => {
   const get_index = Math.floor(Math.random() * arr.length)
-  const name = arr[get_index];
+  const card = arr[get_index];
   arr.splice(get_index, 1)
-  return new Card(name, [], card_type);
+  return new Card(card.name, [], card_type);
 };
 
-const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number) => {
-  let temp_candidate = Array.from(candidate[card_type]);
+const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expansionRegexp: RegExp) => {
+  let temp_candidate = Array.from(candidate[card_type]).filter(card => card.expantion.match(expansionRegexp));
   let cards = []
   for(let i = 0;  i < draw_num; i++) {
       cards.push(_sample(temp_candidate, card_type));
@@ -102,10 +103,11 @@ const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number) => {
 }
 
 const actions: ActionTree<CardState, RootState> = {
-  shuffle({ commit }) {
-    const weapons: Card[] = _shuffle("weapon", 3);
-    const magics: Card[] = _shuffle("magic", 3);
-    const items: Card[] = _shuffle("item", 2);
+  shuffle({ commit, rootGetters }) {
+    const expansionRegexp = rootGetters["expansion/regexp"];
+    const weapons: Card[] = _shuffle("weapon", 3, expansionRegexp);
+    const magics: Card[] = _shuffle("magic", 3, expansionRegexp);
+    const items: Card[] = _shuffle("item", 2, expansionRegexp);
 
     commit("setCards", [...weapons, ...magics, ...items]);
   },
