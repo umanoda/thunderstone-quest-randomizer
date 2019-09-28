@@ -68,7 +68,7 @@ const mutations: MutationTree<CardState> = {
 const _sample = (arr: Candidate[], expansionRegexp: RegExp): Card => {
     const candidates = arr.filter(enemy => enemy.expantion.match(expansionRegexp));
     const card = candidates[Math.floor(Math.random() * candidates.length)];
-    return new Card(card.name, card.tags || [], "monster");
+    return new Card(card.name, card.tags || [], "monster", card.expantion);
 };
 
 const _shuffle = (expansionRegexp: RegExp) => {

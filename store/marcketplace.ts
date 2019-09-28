@@ -90,7 +90,7 @@ const _sample = (arr: Candidate[], card_type: CARD_TYPE): Card => {
   const get_index = Math.floor(Math.random() * arr.length)
   const card = arr[get_index];
   arr.splice(get_index, 1)
-  return new Card(card.name, [], card_type);
+  return new Card(card.name, [], card_type, card.expantion);
 };
 
 const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expansionRegexp: RegExp) => {
