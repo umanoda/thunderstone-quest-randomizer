@@ -45,7 +45,5 @@ export default class extends Vue {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .cards {
-  display: flex;
-  flex-wrap: wrap;
 }
 </style>

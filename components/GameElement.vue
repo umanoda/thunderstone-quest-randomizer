@@ -2,11 +2,11 @@
   <div class="tsq-card" :class="'tsq-'+card.card_type">
     <span class="card_expansion">{{card.expansion}}</span>
     <span class="card_name">{{card.name}}</span>
-    <div class="tags" v-if="card.tags.length">
+    <span v-if="card.tags.length">
       <span class="tag" v-for="tag in card.tags" :key="`tsq-${card.name}-${tag}`">
         {{ tag }}
       </span>
-    </div>
+    </span>
   </div>
 </template>
 
@@ -29,9 +29,8 @@ export default class GameElement extends Vue {
 .tsq-card {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
-  padding: 1rem;
-  margin: 0.25rem;
-  border: 0.25rem solid #010203;
+  padding: 6px;
+  border: 2px solid #010203;
   border-radius: 5px;
   list-style-type: none;
 }
