@@ -5,44 +5,40 @@ type Job ='FIGHTER' | 'ROGUE' | 'WIZARD' | 'CLERIC';
 type Candidate = {
   name: string;
   tags: Job[];
+  expantion: EXPANTION;
 }
 
-const DECK: {[k in EXPANTION]: Candidate[]} = {
-  "#1": [
-    { name: "Grolandor", tags: ["FIGHTER"] },
-    { name: "Hawkswood ", tags: ["ROGUE"] },
-    { name: "Pylorian ", tags: ["WIZARD"] },
-    { name: "Scathian", tags: ["ROGUE", "WIZARD"] },
-    { name: "Silverhelm", tags: ["CLERIC", "FIGHTER"] },
-    { name: "Stormhand", tags: ["FIGHTER"] },
-  ],
-  "#2": [
-  ],
-  "#3": [
-    { name: "Baharan ", tags: ["CLERIC"] },
-    { name: "Darameric", tags: ["CLERIC", "WIZARD"] },
-    { name: "Linsha", tags: [ "FIGHTER"] },
-    { name: "Markennan ", tags: ["FIGHTER"] },
-    { name: "Nimblefingers", tags: ["ROGUE"] },
-    { name: "Regalen", tags: ["WIZARD"] },
-  ],
-  "#4": [
-    { name: "Darkrend", tags: ["WIZARD"] },
-    { name: "Grimwolf", tags: ["FIGHTER"] },
-    { name: "Honormain", tags: ["CLERIC"] },
-    { name: "Jadress", tags: ["ROGUE"] },
-    { name: "Moonblades", tags: ["FIGHTER", "ROGUE"] },
-    { name: "Stormskull", tags: ["WIZARD"] },
-  ],
-  "#5": [
-    { name: "Aird", tags: ["ROGUE"] },
-    { name: "Arcanian", tags: ["WIZARD"] },
-    { name: "Dunardic", tags: ["FIGHTER"] },
-    { name: "Regian", tags: ["CLERIC"] },
-    { name: "Terakian", tags: ["CLERIC", "FIGHTER"] },
-    { name: "Veris", tags: ["WIZARD"] },
-  ]
-}
+const DECK: Candidate[] = [
+  // #1
+  { name: "Grolandor", tags: ["FIGHTER"], expantion: "#1" },
+  { name: "Hawkswood ", tags: ["ROGUE"], expantion: "#1" },
+  { name: "Pylorian ", tags: ["WIZARD"], expantion: "#1" },
+  { name: "Scathian", tags: ["ROGUE", "WIZARD"], expantion: "#1" },
+  { name: "Silverhelm", tags: ["CLERIC", "FIGHTER"], expantion: "#1" },
+  { name: "Stormhand", tags: ["FIGHTER"], expantion: "#1" },
+  // #2
+  // #3
+  { name: "Baharan ", tags: ["CLERIC"], expantion: "#3" },
+  { name: "Darameric", tags: ["CLERIC", "WIZARD"], expantion: "#3" },
+  { name: "Linsha", tags: [ "FIGHTER"], expantion: "#3" },
+  { name: "Markennan ", tags: ["FIGHTER"], expantion: "#3" },
+  { name: "Nimblefingers", tags: ["ROGUE"], expantion: "#3" },
+  { name: "Regalen", tags: ["WIZARD"], expantion: "#3" },
+  // #4
+  { name: "Darkrend", tags: ["WIZARD"], expantion: "#4" },
+  { name: "Grimwolf", tags: ["FIGHTER"], expantion: "#4" },
+  { name: "Honormain", tags: ["CLERIC"], expantion: "#4" },
+  { name: "Jadress", tags: ["ROGUE"], expantion: "#4" },
+  { name: "Moonblades", tags: ["FIGHTER", "ROGUE"], expantion: "#4" },
+  { name: "Stormskull", tags: ["WIZARD"], expantion: "#4" },
+  // #5
+  { name: "Aird", tags: ["ROGUE"], expantion: "#5" },
+  { name: "Arcanian", tags: ["WIZARD"], expantion: "#5" },
+  { name: "Dunardic", tags: ["FIGHTER"], expantion: "#5" },
+  { name: "Regian", tags: ["CLERIC"], expantion: "#5" },
+  { name: "Terakian", tags: ["CLERIC", "FIGHTER"], expantion: "#5" },
+  { name: "Veris", tags: ["WIZARD"], expantion: "#5" },
+]
 
 const state = (): CardState => ({ cards: [] })
 
@@ -62,7 +58,7 @@ const _sample = (arr: Candidate[]): Card => {
 
 const _shuffle = () => {
   let cards: Card[] = []
-  const candidates: Candidate[] = DECK["#1"].concat(DECK["#3"], DECK["#4"], DECK["#5"]);
+  const candidates: Candidate[] = DECK.filter(candidate => candidate.expantion.match(/^#(1|2|3|4|5)$/));
   if (candidates.length < 4) {
     console.error("card is less");
     return cards;
