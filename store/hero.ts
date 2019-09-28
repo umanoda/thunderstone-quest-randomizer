@@ -11,17 +11,17 @@ type Candidate = {
 const DECK: Candidate[] = [
   // #1
   { name: "Grolandor", tags: ["FIGHTER"], expantion: "#1" },
-  { name: "Hawkswood ", tags: ["ROGUE"], expantion: "#1" },
-  { name: "Pylorian ", tags: ["WIZARD"], expantion: "#1" },
+  { name: "Hawkswood", tags: ["ROGUE"], expantion: "#1" },
+  { name: "Pylorian", tags: ["WIZARD"], expantion: "#1" },
   { name: "Scathian", tags: ["ROGUE", "WIZARD"], expantion: "#1" },
   { name: "Silverhelm", tags: ["CLERIC", "FIGHTER"], expantion: "#1" },
   { name: "Stormhand", tags: ["FIGHTER"], expantion: "#1" },
   // #2
   // #3
-  { name: "Baharan ", tags: ["CLERIC"], expantion: "#3" },
+  { name: "Baharan", tags: ["CLERIC"], expantion: "#3" },
   { name: "Darameric", tags: ["CLERIC", "WIZARD"], expantion: "#3" },
   { name: "Linsha", tags: [ "FIGHTER"], expantion: "#3" },
-  { name: "Markennan ", tags: ["FIGHTER"], expantion: "#3" },
+  { name: "Markennan", tags: ["FIGHTER"], expantion: "#3" },
   { name: "Nimblefingers", tags: ["ROGUE"], expantion: "#3" },
   { name: "Regalen", tags: ["WIZARD"], expantion: "#3" },
   // #4

@@ -1,5 +1,5 @@
 import { MutationTree } from "vuex";
-import { ExpansionState } from "../types";
+import { ExpansionState } from "~/types";
 
 const state = (): ExpansionState => ({
   1: true,

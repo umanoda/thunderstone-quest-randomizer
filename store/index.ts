@@ -1,6 +1,6 @@
-import * as types from "~/types";
-import hero from "~/store/hero";
-import marcketplace from "~/store/marcketplace";
-import monster from "~/store/monster";
+import hero from "./hero";
+import marcketplace from "./marcketplace";
+import monster from "./monster";
+import expansion from "./expansion"
 
-export const modules = { hero, marcketplace, monster };
+export const modules = { hero, marcketplace, monster, expansion };
