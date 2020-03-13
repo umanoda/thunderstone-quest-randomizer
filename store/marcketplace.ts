@@ -30,6 +30,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "King's Sword", expantion: "#5" },
     { name: "Longspear", expantion: "#5" },
     { name: "Magi Staff", expantion: "#5" },
+    // #6
+    { name: "Fire Rod", expantion: "#6" },
+    { name: "Flaming Hammer", expantion: "#6" },
+    { name: "Frost Bow", expantion: "#6" },
+    { name: "Mechanical Harpoon", expantion: "#6" },
+    // #7
+    { name: "Bastard Sword", expantion: "#7" },
+    { name: "Battlepick", expantion: "#7" },
+    { name: "Cleaner's Net", expantion: "#7" },
+    { name: "The Five Points", expantion: "#7" },
   ],
   magic: [
     // #1
@@ -53,6 +63,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Frost Bolt", expantion: "#5" },
     { name: "Mind Control", expantion: "#5" },
     { name: "Summon Storm", expantion: "#5" },
+    // #6
+    { name: "Acid Burst", expantion: "#6" },
+    { name: "Ascendance", expantion: "#6" },
+    { name: "Cure Disease", expantion: "#6" },
+    { name: "Heast", expantion: "#6" },
+    // #7
+    { name: "Blizzard", expantion: "#7" },
+    { name: "Cone of Cold", expantion: "#7" },
+    { name: "Create Fire", expantion: "#7" },
+    { name: "Inner Fire", expantion: "#7" },
   ],
   item: [
     // #1
@@ -75,6 +95,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Lightstone Gem", expantion: "#5" },
     { name: "Nature's Amulet", expantion: "#5" },
     { name: "Ring of Spell Storing", expantion: "#5" },
+    // #6
+    { name: "Bracers of Cleansing", expantion: "#6" },
+    { name: "Neverending Rope Spool", expantion: "#6" },
+    { name: "Studded Leather Shirt", expantion: "#6" },
+    { name: "Wand of Illumination", expantion: "#6" },
+    // #7
+    { name: "Eternal Flame", expantion: "#7" },
+    { name: "Ice Climbing Gear", expantion: "#7" },
+    { name: "Snow Trekking Tools", expantion: "#7" },
+    { name: "Tent", expantion: "#7" },
   ]
 }
 

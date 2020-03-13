@@ -23,6 +23,12 @@ const candidates : Candidate[][] = [
     // #5
     { name: "Gnoll Raiders", expantion: "#5" },
     { name: "Dommknighys", tags: ["UNDEAD"], expantion: "#5" },
+    // #6
+    { name: "Drain Dwellers", expantion: "#6" },
+    { name: "Plague Rats",  expantion: "#6" },
+    // #7
+    { name: "Arctic Animals", expantion: "#7" },
+    { name: "Abyssal Servants",  expantion: "#7" },
   ],
   [
     // #1
@@ -38,6 +44,12 @@ const candidates : Candidate[][] = [
     // #5
     { name: "Minions of Chaos", tags: ["DEMON"], expantion: "#5" },
     { name: "Torments", expantion: "#5" },
+    // #6
+    { name: "Choulish Scavengers", tags: ["UNDEAD"], expantion: "#6" },
+    { name: "Sewer Trogs",  expantion: "#6" },
+    // #7
+    { name: "Bloodfrost Clan", expantion: "#7" },
+    { name: "Tundra Wolf Pack",  expantion: "#7" },
   ],
   [
     // #1
@@ -53,6 +65,12 @@ const candidates : Candidate[][] = [
     // #5
     { name: "Ancient Protectors", expantion: "#5" },
     { name: "Ancient Wyrms", expantion: "#5" },
+    // #6
+    { name: "Shapeless Spawns", expantion: "#6" },
+    { name: "Waste Wyrms",  expantion: "#6" },
+    // #7
+    { name: "Frozen Natives", expantion: "#7" },
+    { name: "Ice Behemoths",  expantion: "#7" },
   ]
 ];
 
