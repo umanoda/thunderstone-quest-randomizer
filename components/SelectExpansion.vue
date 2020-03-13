@@ -6,6 +6,8 @@
       <ExpansionCheckbox :expansion=3>Risen from Mire</ExpansionCheckbox>
       <ExpansionCheckbox :expansion=4>At the Foundations of the World</ExpansionCheckbox>
       <ExpansionCheckbox :expansion=5>Ripples in Time</ExpansionCheckbox>
+      <ExpansionCheckbox :expansion=6>What Lies Beneath</ExpansionCheckbox>
+      <ExpansionCheckbox :expansion=7>Frozen in Time</ExpansionCheckbox>
     </div>
 </template>
 
