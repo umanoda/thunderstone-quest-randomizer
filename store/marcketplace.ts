@@ -125,6 +125,7 @@ const _sample = (arr: Candidate[], card_type: CARD_TYPE): Card => {
 
 const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expansionRegexp: RegExp) => {
   let temp_candidate = Array.from(candidate[card_type]).filter(card => card.expantion.match(expansionRegexp));
+  if (temp_candidate.length == 0) return [];
   let cards = []
   for(let i = 0;  i < draw_num; i++) {
       cards.push(_sample(temp_candidate, card_type));

@@ -83,9 +83,10 @@ const mutations: MutationTree<CardState> = {
     }
 };
 
-const _sample = (arr: Candidate[], level: number, expansionRegexp: RegExp): Card => {
+const _sample = (arr: Candidate[], level: number, expansionRegexp: RegExp): Card | null => {
     const candidates = arr.filter(enemy => enemy.expantion.match(expansionRegexp));
     const card = candidates[Math.floor(Math.random() * candidates.length)];
+    if (!card) return null;
     return new Card(`Lv${level} ${card.name}`, card.tags || [], "monster", card.expantion);
 };
 
@@ -94,7 +95,7 @@ const _shuffle = (expansionRegexp: RegExp) => {
         _sample(candidates[0], 1, expansionRegexp),
         _sample(candidates[1], 2, expansionRegexp),
         _sample(candidates[2], 3, expansionRegexp),
-    ];
+    ].filter(elm => !!elm);
 }
 
 const actions: ActionTree<CardState, RootState> = {

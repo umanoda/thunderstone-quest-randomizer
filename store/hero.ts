@@ -135,6 +135,7 @@ const actions: ActionTree<CardState, RootState> = {
     const expansionRegexp = rootGetters["expansion/regexp"];
     while (!_checkHeroJobs(cards)) {
       cards = _shuffle(expansionRegexp);
+      if (cards.length == 0) break;
       if (i++ > 10000) {
         console.error("counter out");
         break; // against for infinity loop
