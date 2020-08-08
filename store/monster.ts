@@ -14,6 +14,9 @@ const candidates : Candidate[][] = [
     { name: "Goblin Grunts", expansion: "#1"},
     { name: "Kobold Skirmishers", expansion: "#1" },
     // #2
+    { name: "Goblin Grunts", expansion: "#2" },
+    { name: "Twisted Creatures", expansion: "#2" },
+    { name: "Woodland Sprites", expansion: "#2" },
     // #3
     { name: "Bog Zombies", tags: ["UNDEAD"], expansion: "#3" },
     { name: "Ensnaring Vines", expansion: "#3" },
@@ -35,6 +38,8 @@ const candidates : Candidate[][] = [
     { name: "Hobgoblin Brutes", expansion: "#1"},
     { name: "Spider Terror", expansion: "#1" },
     // #2
+    { name: "Foundational Keepers", expansion: "#2" },
+    { name: "Corrupted Elves", expansion: "#2" },
     // #3
     { name: "Moor Skeletons", tags: ["UNDEAD"] , expansion: "#3" },
     { name: "Chaos Lizards", expansion: "#3" },
@@ -56,6 +61,8 @@ const candidates : Candidate[][] = [
     { name: "Ancient Adventurers", tags: ["UNDEAD"], expansion: "#1" },
     { name: "Goblin King's Guard", expansion: "#1" },
     // #2
+    { name: "Corrupted Centaurs", expansion: "#2" },
+    { name: "Treefolk", expansion: "#2" },
     // #3
     { name: "Marsh Trolls", expansion: "#3" },
     { name: "Swamp Sprits", tags: ["UNDEAD"], expansion: "#3" },

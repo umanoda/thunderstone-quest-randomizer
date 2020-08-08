@@ -17,6 +17,12 @@ const DECK: Candidate[] = [
   { name: "Silverhelm", jobs: ["CLERIC", "FIGHTER"], expansion: "#1" },
   { name: "Stormhand", jobs: ["FIGHTER"], expansion: "#1" },
   // #2
+  { name: "Sephilest", jobs: ["FIGHTER"], expansion: "#2" },
+  { name: "Avania", jobs: ["CLERIC"], expansion: "#2" },
+  { name: "Ehrlingal", jobs: ["ROGUE"], expansion: "#2" },
+  { name: "Gendarme", jobs: ["WIZARD"], expansion: "#2" },
+  { name: "Brimstone", jobs: ["ROGUE"], expansion: "#2" },
+  { name: "Felin", jobs: ["CLERIC", "WIZARD"], expansion: "#2" },
   // #3
   { name: "Baharan", jobs: ["CLERIC"], expansion: "#3" },
   { name: "Darameric", jobs: ["CLERIC", "WIZARD"], expansion: "#3" },

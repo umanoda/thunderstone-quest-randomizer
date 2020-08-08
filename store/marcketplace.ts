@@ -15,6 +15,10 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Shortsword", expansion: "#1" },
     { name: "Shortspear", expansion: "#1" },
     // #2
+    { name: "Longbow", expansion: "#2" },
+    { name: "Punching Dagger", expansion: "#2" },
+    { name: "Quarterstaff", expansion: "#2" },
+    { name: "Longsword", expansion: "#2" },
     // #3
     { name: "Battle Axe", expansion: "#3" },
     { name: "Boomerang", expansion: "#3" },
@@ -57,6 +61,10 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Magic Missile", expansion: "#1" },
     { name: "Moonligh", expansion: "#1" },
     // #2
+    { name: "Arcane Touch", expansion: "#2" },
+    { name: "Lightning Bolt", expansion: "#2" },
+    { name: "Nature's Fury", expansion: "#2" },
+    { name: "Consecration", expansion: "#2" },
     // #3
     { name: "Arcane Aura", expansion: "#3" },
     { name: "Charm Monster", expansion: "#3" },
@@ -101,6 +109,10 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Gem of Healing", expansion: "#1" },
     { name: "Tom of Knowledge", expansion: "#1" },
     // #2
+    { name: "Elven Ring", expansion: "#2" },
+    { name: "Headband of Intellect", expansion: "#2" },
+    { name: "Wand of Light", expansion: "#2" },
+    { name: "Strength Gauntlets", expansion: "#2" },
     // #3
     { name: "Crystal of Scrying", expansion: "#3" },
     { name: "Holy Symbol", expansion: "#3" },

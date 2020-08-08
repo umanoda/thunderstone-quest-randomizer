@@ -2,7 +2,7 @@
     <div>
       <h2 class="subtitle">Select Expantions</h2>
       <ExpansionCheckbox :expansion=1 />
-      <ExpansionCheckbox :expansion=2 :force=false />
+      <ExpansionCheckbox :expansion=2 />
       <ExpansionCheckbox :expansion=3 />
       <ExpansionCheckbox :expansion=4 />
       <ExpansionCheckbox :expansion=5 />
