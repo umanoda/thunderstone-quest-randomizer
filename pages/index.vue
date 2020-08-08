@@ -7,6 +7,10 @@
       <button class="button" @click="shuffleAll">
         <i class="fas fa-sync-alt">ALL</i>
       </button>
+      <button class="button" @click="copyToClipboard">
+        <span style="padding-right: 4px">Copy to clipboard</span>
+        <i class="fas fa-copy"></i>
+      </button>
     </div>
 
     <div class="container">
@@ -23,7 +27,7 @@ import {
   Vue
 } from "nuxt-property-decorator"
 import { State } from "vuex-class"
-import { Card } from "~/types";
+import { CardState } from "~/types";
 import GameElement from "~/components/GameElement.vue"
 import RandomSetup from "~/components/RandomSetup.vue"
 import SelectExpansion from "~/components/SelectExpansion.vue"
@@ -36,9 +40,9 @@ import SelectExpansion from "~/components/SelectExpansion.vue"
   }
 })
 export default class extends Vue {
-  @State hero!: Card;
-  @State marcketplace!: Card;
-  @State monster!: Card;
+  @State hero!: CardState;
+  @State marcketplace!: CardState;
+  @State monster!: CardState;
   @State expansion: any;
 
   mounted(){
@@ -47,6 +51,46 @@ export default class extends Vue {
 
   shuffleAll(){
     this.$store.dispatch("shuffleAll");
+  }
+
+  copyToClipboard(){
+    let str = "";
+    const tmp = document.createElement("div"),
+          pre = document.createElement('pre');
+    if (this.hero == null || this.marcketplace == null || this.monster == null) {
+      return;
+    }
+
+    // does not copy when parent elements user-select: none
+    pre.style.webkitUserSelect = 'auto';
+    pre.style.userSelect = 'auto';
+
+    str += "Marcketplace\n"
+    this.marcketplace.cards.forEach(card => str += `${card.symbol()} ${card.expansion} ${card.name}\n`);
+    str += "Hero\n"
+    this.hero.cards.forEach(card => str += `${card.symbol()} ${card.expansion} ${card.name}\n`);
+    str += "Monster\n"
+    this.monster.cards.forEach(card => str += `${card.symbol()} ${card.expansion} ${card.name}\n`);
+    tmp.appendChild(pre).textContent = str;
+
+    // hide tmp element
+    const s = tmp.style;
+    s.position = 'fixed';
+    s.right = '200%';
+
+    // add body
+    document.body.appendChild(tmp);
+    // select element
+    const selection = document.getSelection();
+    if (selection != null) {
+      selection.selectAllChildren(tmp);
+    }
+
+    // copy to clipboard
+    var result = document.execCommand("copy");
+
+    // remove tempolary element
+    document.body.removeChild(tmp);
   }
 }
 </script>

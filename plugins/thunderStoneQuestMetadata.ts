@@ -9,7 +9,7 @@ type tExpansionMetadatas = {
   [key: number]: tExpansionMetadata,
 };
 
-const expansionMetadatas: tExpansionMetadatas = {
+export const expansionMetadatas: tExpansionMetadatas = {
   1: { title: "A mirror in the Dark ", symbol: "💏"},
   2: { title: "Total Eclipse of the Sun", symbol: "🌜"},
   3: { title: "Risen from the Mire", symbol: "➕"},
