@@ -1,5 +1,6 @@
 <template>
   <div class="tsq-card" :class="'tsq-'+card.card_type">
+    <span class="card_expansion">{{symbol()}}</span>
     <span class="card_expansion">{{card.expansion}}</span>
     <span class="card_name">{{card.name}}</span>
     <span v-if="card.tags.length">
@@ -21,6 +22,13 @@ import { Card } from "~/types";
 @Component({})
 export default class GameElement extends Vue {
   @Prop() card!: Card
+
+  symbol() : string {
+    console.log(this.card)
+    const expansionSymbol = this.$metadatas.expansion[Number(this.card.expansion.replace("#",""))];
+    if (!expansionSymbol) return "";
+    return expansionSymbol.symbol;
+  }
 }
 </script>
 

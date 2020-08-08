@@ -5,7 +5,8 @@
       :checked="checked"
       :disabled="isForce"
       @click="handleChange"/>
-    <span>#{{$props.expansion}}</span>
+      <span class="symbol">{{symbol($props.expansion)}}</span>
+      <span>{{title($props.expansion)}}</span>
     <slot />
   </label>
 </template>
@@ -39,6 +40,16 @@ export default class ExpansionCheckbox extends Vue {
     this.checked = !this.checked
     this.$store.dispatch("expansion/changeUseExpansion", {expansionNumber: this.$props.expansion, enable: this.checked})
   }
+
+  title(expansionNum: number) {
+    const expansionMetadata = this.$metadatas.expansion[expansionNum]
+    return `#${this.expansion} ${expansionMetadata.title}`;
+  }
+
+  symbol(expansionNum: number) {
+    const expansionMetadata = this.$metadatas.expansion[expansionNum]
+    return expansionMetadata.symbol;
+  }
 }
 </script>
 
@@ -46,6 +57,11 @@ export default class ExpansionCheckbox extends Vue {
 .checkbox {
   padding-right: 8px;
   color: rgb(243,235,235);
+}
+.symbol {
+  width: 1.5em;
+  display: inline-block;
+  margin-left: 4px;
 }
 .checkbox:hover {
   color: gray;

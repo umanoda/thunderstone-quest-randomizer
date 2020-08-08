@@ -30,7 +30,7 @@ const getters: GetterTree<ExpansionState, ExpansionState> = {
   regexp (state: ExpansionState) {
     const enables = Object.entries(state).filter(x => x[1]).map(x => x[0]).join("|");
     return new RegExp(`^#(${enables})$`);
-  }
+  },
 };
 
 export default {

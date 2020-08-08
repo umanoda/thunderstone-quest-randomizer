@@ -1,141 +1,141 @@
-import { RootState, CardState, Card, CARD_TYPE, EXPANTION } from "~/types";
+import { RootState, CardState, Card, CARD_TYPE, EXPANSION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 type ITEM_TYPE = "weapon" | "magic" | "item";
 type Candidate = {
   name: string;
-  expantion: EXPANTION;
+  expansion: EXPANSION;
 }
 
 const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
   weapon: [
     // #1
-    { name: "Hummer", expantion: "#1" },
-    { name: "Maul", expantion: "#1" },
-    { name: "Shortbow", expantion: "#1" },
-    { name: "Shortsword", expantion: "#1" },
-    { name: "Shortspear", expantion: "#1" },
+    { name: "Hummer", expansion: "#1" },
+    { name: "Maul", expansion: "#1" },
+    { name: "Shortbow", expansion: "#1" },
+    { name: "Shortsword", expansion: "#1" },
+    { name: "Shortspear", expansion: "#1" },
     // #2
     // #3
-    { name: "Battle Axe", expantion: "#3" },
-    { name: "Boomerang", expantion: "#3" },
-    { name: "Crystal Dagger", expantion: "#3" },
-    { name: "Hory Mace", expantion: "#3" },
+    { name: "Battle Axe", expansion: "#3" },
+    { name: "Boomerang", expansion: "#3" },
+    { name: "Crystal Dagger", expansion: "#3" },
+    { name: "Hory Mace", expansion: "#3" },
     // #4
-    { name: "Broadsword", expantion: "#4" },
-    { name: "Crossbow", expantion: "#4" },
-    { name: "Flail", expantion: "#4" },
-    { name: "Two-Handed Sword", expantion: "#4" },
+    { name: "Broadsword", expansion: "#4" },
+    { name: "Crossbow", expansion: "#4" },
+    { name: "Flail", expansion: "#4" },
+    { name: "Two-Handed Sword", expansion: "#4" },
     // #5
-    { name: "Cursed Mace", expantion: "#5" },
-    { name: "King's Sword", expantion: "#5" },
-    { name: "Longspear", expantion: "#5" },
-    { name: "Magi Staff", expantion: "#5" },
+    { name: "Cursed Mace", expansion: "#5" },
+    { name: "King's Sword", expansion: "#5" },
+    { name: "Longspear", expansion: "#5" },
+    { name: "Magi Staff", expansion: "#5" },
     // #6
-    { name: "Fire Rod", expantion: "#6" },
-    { name: "Flaming Hammer", expantion: "#6" },
-    { name: "Frost Bow", expantion: "#6" },
-    { name: "Mechanical Harpoon", expantion: "#6" },
+    { name: "Fire Rod", expansion: "#6" },
+    { name: "Flaming Hammer", expansion: "#6" },
+    { name: "Frost Bow", expansion: "#6" },
+    { name: "Mechanical Harpoon", expansion: "#6" },
     // #7
-    { name: "Bastard Sword", expantion: "#7" },
-    { name: "Battlepick", expantion: "#7" },
-    { name: "Cleaner's Net", expantion: "#7" },
-    { name: "The Five Points", expantion: "#7" },
+    { name: "Bastard Sword", expansion: "#7" },
+    { name: "Battlepick", expansion: "#7" },
+    { name: "Cleaner's Net", expansion: "#7" },
+    { name: "The Five Points", expansion: "#7" },
     // #8
-    { name: "Khopesh", expantion: "#8" },
-    { name: "Avian Bow", expantion: "#8" },
-    { name: "Scimitar", expantion: "#8" },
+    { name: "Khopesh", expansion: "#8" },
+    { name: "Avian Bow", expansion: "#8" },
+    { name: "Scimitar", expansion: "#8" },
     // #9
-    { name: "Keltarian Bow", expantion: "#9" },
-    { name: "Theunderstone Hammer", expantion: "#9" },
-    { name: "Theunderstone Rod", expantion: "#9" },
-    // { name: "", expantion: "#" },
+    { name: "Keltarian Bow", expansion: "#9" },
+    { name: "Theunderstone Hammer", expansion: "#9" },
+    { name: "Theunderstone Rod", expansion: "#9" },
+    // { name: "", expansion: "#" },
   ],
   magic: [
     // #1
-    { name: "Fireball", expantion: "#1" },
-    { name: "Future Vison", expantion: "#1" },
-    { name: "Magic Missile", expantion: "#1" },
-    { name: "Moonligh", expantion: "#1" },
+    { name: "Fireball", expansion: "#1" },
+    { name: "Future Vison", expansion: "#1" },
+    { name: "Magic Missile", expansion: "#1" },
+    { name: "Moonligh", expansion: "#1" },
     // #2
     // #3
-    { name: "Arcane Aura", expantion: "#3" },
-    { name: "Charm Monster", expantion: "#3" },
-    { name: "Snchant Weapons", expantion: "#3" },
-    { name: "Vampiric Touch", expantion: "#3" },
+    { name: "Arcane Aura", expansion: "#3" },
+    { name: "Charm Monster", expansion: "#3" },
+    { name: "Snchant Weapons", expansion: "#3" },
+    { name: "Vampiric Touch", expansion: "#3" },
     // #4
-    { name: "Death Pact", expantion: "#4" },
-    { name: "Mirror Image", expantion: "#4" },
-    { name: "Tempest", expantion: "#4" },
-    { name: "True Seeing", expantion: "#4" },
+    { name: "Death Pact", expansion: "#4" },
+    { name: "Mirror Image", expansion: "#4" },
+    { name: "Tempest", expansion: "#4" },
+    { name: "True Seeing", expansion: "#4" },
     // #5
-    { name: "Creeping Death", expantion: "#5" },
-    { name: "Frost Bolt", expantion: "#5" },
-    { name: "Mind Control", expantion: "#5" },
-    { name: "Summon Storm", expantion: "#5" },
+    { name: "Creeping Death", expansion: "#5" },
+    { name: "Frost Bolt", expansion: "#5" },
+    { name: "Mind Control", expansion: "#5" },
+    { name: "Summon Storm", expansion: "#5" },
     // #6
-    { name: "Acid Burst", expantion: "#6" },
-    { name: "Ascendance", expantion: "#6" },
-    { name: "Cure Disease", expantion: "#6" },
-    { name: "Heast", expantion: "#6" },
+    { name: "Acid Burst", expansion: "#6" },
+    { name: "Ascendance", expansion: "#6" },
+    { name: "Cure Disease", expansion: "#6" },
+    { name: "Heast", expansion: "#6" },
     // #7
-    { name: "Blizzard", expantion: "#7" },
-    { name: "Cone of Cold", expantion: "#7" },
-    { name: "Create Fire", expantion: "#7" },
-    { name: "Inner Fire", expantion: "#7" },
+    { name: "Blizzard", expansion: "#7" },
+    { name: "Cone of Cold", expansion: "#7" },
+    { name: "Create Fire", expansion: "#7" },
+    { name: "Inner Fire", expansion: "#7" },
     // #8
-    { name: "Mummify", expantion: "#8" },
-    { name: "Navigate the Labyrinth", expantion: "#8" },
-    { name: "Open Sesame", expantion: "#8" },
-    { name: "Summon Help", expantion: "#8" },
+    { name: "Mummify", expansion: "#8" },
+    { name: "Navigate the Labyrinth", expansion: "#8" },
+    { name: "Open Sesame", expansion: "#8" },
+    { name: "Summon Help", expansion: "#8" },
     // #9
-    { name: "Theunderstone Ritual", expantion: "#9" },
-    { name: "Construct Protector", expantion: "#9" },
-    { name: "Transmutation", expantion: "#9" },
-    { name: "Animate Dead", expantion: "#9" },
-    { name: "Mend", expantion: "#9" },
-    //{ name: "", expantion: "#" },
+    { name: "Theunderstone Ritual", expansion: "#9" },
+    { name: "Construct Protector", expansion: "#9" },
+    { name: "Transmutation", expansion: "#9" },
+    { name: "Animate Dead", expansion: "#9" },
+    { name: "Mend", expansion: "#9" },
+    //{ name: "", expansion: "#" },
   ],
   item: [
     // #1
-    { name: "Amulet of Infravision", expantion: "#1" },
-    { name: "Gem of Healing", expantion: "#1" },
-    { name: "Tom of Knowledge", expantion: "#1" },
+    { name: "Amulet of Infravision", expansion: "#1" },
+    { name: "Gem of Healing", expansion: "#1" },
+    { name: "Tom of Knowledge", expansion: "#1" },
     // #2
     // #3
-    { name: "Crystal of Scrying", expantion: "#3" },
-    { name: "Holy Symbol", expantion: "#3" },
-    { name: "Potion of Stamina", expantion: "#3" },
-    { name: "Ring of Learning", expantion: "#3" },
+    { name: "Crystal of Scrying", expansion: "#3" },
+    { name: "Holy Symbol", expansion: "#3" },
+    { name: "Potion of Stamina", expansion: "#3" },
+    { name: "Ring of Learning", expansion: "#3" },
     // #4
-    { name: "Damilu Huskie", expantion: "#4" },
-    { name: "Daramere's Cloak", expantion: "#4" },
-    { name: "Potion of Light", expantion: "#4" },
-    { name: "Ring of Proficiency", expantion: "#4" },
+    { name: "Damilu Huskie", expansion: "#4" },
+    { name: "Daramere's Cloak", expansion: "#4" },
+    { name: "Potion of Light", expansion: "#4" },
+    { name: "Ring of Proficiency", expansion: "#4" },
     // #5
-    { name: "Amulet of Power", expantion: "#5" },
-    { name: "Lightstone Gem", expantion: "#5" },
-    { name: "Nature's Amulet", expantion: "#5" },
-    { name: "Ring of Spell Storing", expantion: "#5" },
+    { name: "Amulet of Power", expansion: "#5" },
+    { name: "Lightstone Gem", expansion: "#5" },
+    { name: "Nature's Amulet", expansion: "#5" },
+    { name: "Ring of Spell Storing", expansion: "#5" },
     // #6
-    { name: "Bracers of Cleansing", expantion: "#6" },
-    { name: "Neverending Rope Spool", expantion: "#6" },
-    { name: "Studded Leather Shirt", expantion: "#6" },
-    { name: "Wand of Illumination", expantion: "#6" },
+    { name: "Bracers of Cleansing", expansion: "#6" },
+    { name: "Neverending Rope Spool", expansion: "#6" },
+    { name: "Studded Leather Shirt", expansion: "#6" },
+    { name: "Wand of Illumination", expansion: "#6" },
     // #7
-    { name: "Eternal Flame", expantion: "#7" },
-    { name: "Ice Climbing Gear", expantion: "#7" },
-    { name: "Snow Trekking Tools", expantion: "#7" },
-    { name: "Tent", expantion: "#7" },
+    { name: "Eternal Flame", expansion: "#7" },
+    { name: "Ice Climbing Gear", expansion: "#7" },
+    { name: "Snow Trekking Tools", expansion: "#7" },
+    { name: "Tent", expansion: "#7" },
     // #8
-    { name: "Bag of Gems", expantion: "#8" },
-    { name: "Spices", expantion: "#8" },
-    { name: "Theunderstone Potion", expantion: "#8" },
+    { name: "Bag of Gems", expansion: "#8" },
+    { name: "Spices", expansion: "#8" },
+    { name: "Theunderstone Potion", expansion: "#8" },
     // #9
-    { name: "Theunderstone Elixir", expantion: "#9" },
-    { name: "Plate Armor", expantion: "#9" },
-    { name: "Theunderstone Ore", expantion: "#9" },
-    { name: "Crystal Light", expantion: "#9" },
-    //{ name: "", expantion: "#" },
+    { name: "Theunderstone Elixir", expansion: "#9" },
+    { name: "Plate Armor", expansion: "#9" },
+    { name: "Theunderstone Ore", expansion: "#9" },
+    { name: "Crystal Light", expansion: "#9" },
+    //{ name: "", expansion: "#" },
   ]
 }
 
@@ -151,11 +151,11 @@ const _sample = (arr: Candidate[], card_type: CARD_TYPE): Card => {
   const get_index = Math.floor(Math.random() * arr.length)
   const card = arr[get_index];
   arr.splice(get_index, 1)
-  return new Card(card.name, [], card_type, card.expantion);
+  return new Card(card.name, [], card_type, card.expansion);
 };
 
 const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expansionRegexp: RegExp) => {
-  let temp_candidate = Array.from(candidate[card_type]).filter(card => card.expantion.match(expansionRegexp));
+  let temp_candidate = Array.from(candidate[card_type]).filter(card => card.expansion.match(expansionRegexp));
   if (temp_candidate.length == 0) return [];
   let cards = []
   for(let i = 0;  i < draw_num; i++) {

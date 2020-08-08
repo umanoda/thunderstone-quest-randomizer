@@ -1,71 +1,71 @@
-import { RootState, CardState, Card, EXPANTION } from "~/types";
+import { RootState, CardState, Card, EXPANSION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
 
 type Job ='FIGHTER' | 'ROGUE' | 'WIZARD' | 'CLERIC';
 type Candidate = {
   name: string;
   jobs: Job[];
-  expantion: EXPANTION;
+  expansion: EXPANSION;
 }
 
 const DECK: Candidate[] = [
   // #1
-  { name: "Grolandor", jobs: ["FIGHTER"], expantion: "#1" },
-  { name: "Hawkswood", jobs: ["ROGUE"], expantion: "#1" },
-  { name: "Pylorian", jobs: ["WIZARD"], expantion: "#1" },
-  { name: "Scathian", jobs: ["ROGUE", "WIZARD"], expantion: "#1" },
-  { name: "Silverhelm", jobs: ["CLERIC", "FIGHTER"], expantion: "#1" },
-  { name: "Stormhand", jobs: ["FIGHTER"], expantion: "#1" },
+  { name: "Grolandor", jobs: ["FIGHTER"], expansion: "#1" },
+  { name: "Hawkswood", jobs: ["ROGUE"], expansion: "#1" },
+  { name: "Pylorian", jobs: ["WIZARD"], expansion: "#1" },
+  { name: "Scathian", jobs: ["ROGUE", "WIZARD"], expansion: "#1" },
+  { name: "Silverhelm", jobs: ["CLERIC", "FIGHTER"], expansion: "#1" },
+  { name: "Stormhand", jobs: ["FIGHTER"], expansion: "#1" },
   // #2
   // #3
-  { name: "Baharan", jobs: ["CLERIC"], expantion: "#3" },
-  { name: "Darameric", jobs: ["CLERIC", "WIZARD"], expantion: "#3" },
-  { name: "Linsha", jobs: [ "FIGHTER"], expantion: "#3" },
-  { name: "Markennan", jobs: ["FIGHTER"], expantion: "#3" },
-  { name: "Nimblefingers", jobs: ["ROGUE"], expantion: "#3" },
-  { name: "Regalen", jobs: ["WIZARD"], expantion: "#3" },
+  { name: "Baharan", jobs: ["CLERIC"], expansion: "#3" },
+  { name: "Darameric", jobs: ["CLERIC", "WIZARD"], expansion: "#3" },
+  { name: "Linsha", jobs: [ "FIGHTER"], expansion: "#3" },
+  { name: "Markennan", jobs: ["FIGHTER"], expansion: "#3" },
+  { name: "Nimblefingers", jobs: ["ROGUE"], expansion: "#3" },
+  { name: "Regalen", jobs: ["WIZARD"], expansion: "#3" },
   // #4
-  { name: "Darkrend", jobs: ["WIZARD"], expantion: "#4" },
-  { name: "Grimwolf", jobs: ["FIGHTER"], expantion: "#4" },
-  { name: "Honormain", jobs: ["CLERIC"], expantion: "#4" },
-  { name: "Jadress", jobs: ["ROGUE"], expantion: "#4" },
-  { name: "Moonblades", jobs: ["FIGHTER", "ROGUE"], expantion: "#4" },
-  { name: "Stormskull", jobs: ["WIZARD"], expantion: "#4" },
+  { name: "Darkrend", jobs: ["WIZARD"], expansion: "#4" },
+  { name: "Grimwolf", jobs: ["FIGHTER"], expansion: "#4" },
+  { name: "Honormain", jobs: ["CLERIC"], expansion: "#4" },
+  { name: "Jadress", jobs: ["ROGUE"], expansion: "#4" },
+  { name: "Moonblades", jobs: ["FIGHTER", "ROGUE"], expansion: "#4" },
+  { name: "Stormskull", jobs: ["WIZARD"], expansion: "#4" },
   // #5
-  { name: "Aird", jobs: ["ROGUE"], expantion: "#5" },
-  { name: "Arcanian", jobs: ["WIZARD"], expantion: "#5" },
-  { name: "Dunardic", jobs: ["FIGHTER"], expantion: "#5" },
-  { name: "Regian", jobs: ["CLERIC"], expantion: "#5" },
-  { name: "Terakian", jobs: ["CLERIC", "FIGHTER"], expantion: "#5" },
-  { name: "Veris", jobs: ["WIZARD"], expantion: "#5" },
+  { name: "Aird", jobs: ["ROGUE"], expansion: "#5" },
+  { name: "Arcanian", jobs: ["WIZARD"], expansion: "#5" },
+  { name: "Dunardic", jobs: ["FIGHTER"], expansion: "#5" },
+  { name: "Regian", jobs: ["CLERIC"], expansion: "#5" },
+  { name: "Terakian", jobs: ["CLERIC", "FIGHTER"], expansion: "#5" },
+  { name: "Veris", jobs: ["WIZARD"], expansion: "#5" },
   // #6
-  { name: "Graeme Crawford", jobs: ["CLERIC", "FIGHTER"], expantion: "#6" },
-  { name: "Khomros", jobs: ["FIGHTER"], expantion: "#6" },
-  { name: "Ophialyn the Tracker", jobs: ["FIGHTER"], expantion: "#6" },
-  { name: "Runiva Highstone", jobs: ["WIZARD"], expantion: "#6" },
-  { name: "Uvina the Delver", jobs: ["ROGUE"], expantion: "#6" },
-  { name: "Wiltran Proudmore", jobs: ["CLERIC"], expantion: "#6" },
+  { name: "Graeme Crawford", jobs: ["CLERIC", "FIGHTER"], expansion: "#6" },
+  { name: "Khomros", jobs: ["FIGHTER"], expansion: "#6" },
+  { name: "Ophialyn the Tracker", jobs: ["FIGHTER"], expansion: "#6" },
+  { name: "Runiva Highstone", jobs: ["WIZARD"], expansion: "#6" },
+  { name: "Uvina the Delver", jobs: ["ROGUE"], expansion: "#6" },
+  { name: "Wiltran Proudmore", jobs: ["CLERIC"], expansion: "#6" },
   // #7
-  { name: "Breezy", jobs: ["WIZARD"], expantion: "#7" },
-  { name: "Drulfal the Primordial", jobs: ["CLERIC"], expantion: "#7" },
-  { name: "Lefira", jobs: ["FIGHTER"], expantion: "#7" },
-  { name: "Lilande Songweaver", jobs: ["ROGUE"], expantion: "#7" },
-  { name: "Rugduhr Blackmane", jobs: ["ROGUE"], expantion: "#7" },
-  { name: "Samly Thrackson", jobs: ["CLERIC"], expantion: "#7" },
+  { name: "Breezy", jobs: ["WIZARD"], expansion: "#7" },
+  { name: "Drulfal the Primordial", jobs: ["CLERIC"], expansion: "#7" },
+  { name: "Lefira", jobs: ["FIGHTER"], expansion: "#7" },
+  { name: "Lilande Songweaver", jobs: ["ROGUE"], expansion: "#7" },
+  { name: "Rugduhr Blackmane", jobs: ["ROGUE"], expansion: "#7" },
+  { name: "Samly Thrackson", jobs: ["CLERIC"], expansion: "#7" },
   // #8
-  { name: "Heman Granitesunder", jobs: ["FIGHTER"], expantion: "#8" },
-  { name: "Duriggim Soulbrand", jobs: ["CLERIC", "WIZARD"], expantion: "#8" },
-  { name: "Rien Mandroux", jobs: ["FIGHTER"], expantion: "#8" },
-  { name: "Shakir the Sailor", jobs: ["ROGUE"], expantion: "#8" },
-  { name: "Cirrok", jobs: ["ROGUE"], expantion: "#8" },
-  { name: "Shawna Hopesinger", jobs: ["ROGUE", "WIZARD"], expantion: "#8" },
+  { name: "Heman Granitesunder", jobs: ["FIGHTER"], expansion: "#8" },
+  { name: "Duriggim Soulbrand", jobs: ["CLERIC", "WIZARD"], expansion: "#8" },
+  { name: "Rien Mandroux", jobs: ["FIGHTER"], expansion: "#8" },
+  { name: "Shakir the Sailor", jobs: ["ROGUE"], expansion: "#8" },
+  { name: "Cirrok", jobs: ["ROGUE"], expansion: "#8" },
+  { name: "Shawna Hopesinger", jobs: ["ROGUE", "WIZARD"], expansion: "#8" },
   // #9
-  { name: "Baraqiel", jobs: ["CLERIC"], expantion: "#9" },
-  { name: "Shenaris", jobs: ["CLERIC"], expantion: "#9" },
-  { name: "Hamrulir Oakenborn", jobs: ["FIGHTER"], expantion: "#9" },
-  { name: "Tilka the Sculptor", jobs: ["ROGUE"], expantion: "#9" },
-  { name: "Caslech", jobs: ["ROGUE", "WIZARD"], expantion: "#9" },
-  { name: "Liss", jobs: ["WIZARD"], expantion: "#9" },
+  { name: "Baraqiel", jobs: ["CLERIC"], expansion: "#9" },
+  { name: "Shenaris", jobs: ["CLERIC"], expansion: "#9" },
+  { name: "Hamrulir Oakenborn", jobs: ["FIGHTER"], expansion: "#9" },
+  { name: "Tilka the Sculptor", jobs: ["ROGUE"], expansion: "#9" },
+  { name: "Caslech", jobs: ["ROGUE", "WIZARD"], expansion: "#9" },
+  { name: "Liss", jobs: ["WIZARD"], expansion: "#9" },
 ]
 
 const state = (): CardState => ({ cards: [] })
@@ -103,12 +103,12 @@ const _sample = (arr: Candidate[]): [Card, Candidate[]] => {
     arr = arr.filter(c => c.jobs.toString() !== card.jobs.toString());
   }
 
-  return [new Card(card.name, card.jobs, "hero", card.expantion), arr];
+  return [new Card(card.name, card.jobs, "hero", card.expansion), arr];
 };
 
 const _shuffle = (expansionRegexp: RegExp) => {
   let cards: Card[] = []
-  const candidates: Candidate[] = DECK.filter(candidate => candidate.expantion.match(expansionRegexp));
+  const candidates: Candidate[] = DECK.filter(candidate => candidate.expansion.match(expansionRegexp));
   if (candidates.length < 4) {
     console.error("card is less");
     return cards;

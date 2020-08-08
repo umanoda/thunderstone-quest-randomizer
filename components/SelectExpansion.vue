@@ -1,15 +1,15 @@
 <template>
     <div>
       <h2 class="subtitle">Select Expantions</h2>
-      <ExpansionCheckbox :expansion=1>A mirror in the Dark</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=2 :force=false>Total Eclipse of the Sun</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=3>Risen from Mire</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=4>At the Foundations of the World</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=5>Ripples in Time</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=6>What Lies Beneath</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=7>Frozen in Time</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=8>Vengeful Sands</ExpansionCheckbox>
-      <ExpansionCheckbox :expansion=9>Clockwork Destiny</ExpansionCheckbox>
+      <ExpansionCheckbox :expansion=1 />
+      <ExpansionCheckbox :expansion=2 :force=false />
+      <ExpansionCheckbox :expansion=3 />
+      <ExpansionCheckbox :expansion=4 />
+      <ExpansionCheckbox :expansion=5 />
+      <ExpansionCheckbox :expansion=6 />
+      <ExpansionCheckbox :expansion=7 />
+      <ExpansionCheckbox :expansion=8 />
+      <ExpansionCheckbox :expansion=9 />
     </div>
 </template>
 

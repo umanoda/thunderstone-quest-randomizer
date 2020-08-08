@@ -39,8 +39,7 @@ const manifest = {
       type: "image/png"
     }
   ]
-}
-
+};
 
 export default {
   env: {},
@@ -67,6 +66,7 @@ export default {
     },
     manifest,
   },
+  plugins: ["~/plugins/thunderStoneQuestMetadata"],
   modules: [
     [ '@nuxtjs/pwa', { icon: false } ] ,
     "@nuxtjs/axios",
@@ -74,4 +74,4 @@ export default {
   ],
   axios: {},
   ...routerBase,
-}
+};
