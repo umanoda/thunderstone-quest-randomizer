@@ -11,6 +11,7 @@
         <span style="padding-right: 4px">Copy to clipboard</span>
         <i class="fas fa-copy"></i>
       </button>
+      <span class="message-copied" :class='[showMessageCopied ? "message-copied-show" : "message-copied-none"]'>Copied!!</span>
     </div>
 
     <div class="container">
@@ -24,7 +25,8 @@
 <script lang="ts">
 import {
   Component,
-  Vue
+  Vue,
+  Watch,
 } from "nuxt-property-decorator"
 import { State } from "vuex-class"
 import { CardState } from "~/types";
@@ -44,6 +46,14 @@ export default class extends Vue {
   @State marcketplace!: CardState;
   @State monster!: CardState;
   @State expansion: any;
+  @State showMessageCopied: boolean = false;
+
+  @Watch('showMessageCopied')
+  onChangeShowMessageCopied(newValue: boolean, oldValue: boolean) {
+    if (this.showMessageCopied) {
+      setTimeout(() => { this.showMessageCopied = false}, 1000);
+    }
+  }
 
   mounted(){
     this.shuffleAll();
@@ -91,6 +101,7 @@ export default class extends Vue {
 
     // remove tempolary element
     document.body.removeChild(tmp);
+    this.showMessageCopied = true;
   }
 }
 </script>
@@ -107,5 +118,19 @@ export default class extends Vue {
 .cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+.message-copied {
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.message-copied-show {
+  color: lightgreen;
+  opacity: 1;
+}
+
+.message-copied-none {
+  opacity: 0;
 }
 </style>
