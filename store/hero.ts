@@ -52,6 +52,20 @@ const DECK: Candidate[] = [
   { name: "Lilande Songweaver", jobs: ["ROGUE"], expantion: "#7" },
   { name: "Rugduhr Blackmane", jobs: ["ROGUE"], expantion: "#7" },
   { name: "Samly Thrackson", jobs: ["CLERIC"], expantion: "#7" },
+  // #8
+  { name: "Heman Granitesunder", jobs: ["FIGHTER"], expantion: "#8" },
+  { name: "Duriggim Soulbrand", jobs: ["CLERIC", "WIZARD"], expantion: "#8" },
+  { name: "Rien Mandroux", jobs: ["FIGHTER"], expantion: "#8" },
+  { name: "Shakir the Sailor", jobs: ["ROGUE"], expantion: "#8" },
+  { name: "Cirrok", jobs: ["ROGUE"], expantion: "#8" },
+  { name: "Shawna Hopesinger", jobs: ["ROGUE", "WIZARD"], expantion: "#8" },
+  // #9
+  { name: "Baraqiel", jobs: ["CLERIC"], expantion: "#9" },
+  { name: "Shenaris", jobs: ["CLERIC"], expantion: "#9" },
+  { name: "Hamrulir Oakenborn", jobs: ["FIGHTER"], expantion: "#9" },
+  { name: "Tilka the Sculptor", jobs: ["ROGUE"], expantion: "#9" },
+  { name: "Caslech", jobs: ["ROGUE", "WIZARD"], expantion: "#9" },
+  { name: "Liss", jobs: ["WIZARD"], expantion: "#9" },
 ]
 
 const state = (): CardState => ({ cards: [] })

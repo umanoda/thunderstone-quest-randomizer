@@ -8,6 +8,8 @@
       <ExpansionCheckbox :expansion=5>Ripples in Time</ExpansionCheckbox>
       <ExpansionCheckbox :expansion=6>What Lies Beneath</ExpansionCheckbox>
       <ExpansionCheckbox :expansion=7>Frozen in Time</ExpansionCheckbox>
+      <ExpansionCheckbox :expansion=8>Vengeful Sands</ExpansionCheckbox>
+      <ExpansionCheckbox :expansion=9>Clockwork Destiny</ExpansionCheckbox>
     </div>
 </template>
 

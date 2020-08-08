@@ -40,6 +40,15 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Battlepick", expantion: "#7" },
     { name: "Cleaner's Net", expantion: "#7" },
     { name: "The Five Points", expantion: "#7" },
+    // #8
+    { name: "Khopesh", expantion: "#8" },
+    { name: "Avian Bow", expantion: "#8" },
+    { name: "Scimitar", expantion: "#8" },
+    // #9
+    { name: "Keltarian Bow", expantion: "#9" },
+    { name: "Theunderstone Hammer", expantion: "#9" },
+    { name: "Theunderstone Rod", expantion: "#9" },
+    // { name: "", expantion: "#" },
   ],
   magic: [
     // #1
@@ -73,6 +82,18 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Cone of Cold", expantion: "#7" },
     { name: "Create Fire", expantion: "#7" },
     { name: "Inner Fire", expantion: "#7" },
+    // #8
+    { name: "Mummify", expantion: "#8" },
+    { name: "Navigate the Labyrinth", expantion: "#8" },
+    { name: "Open Sesame", expantion: "#8" },
+    { name: "Summon Help", expantion: "#8" },
+    // #9
+    { name: "Theunderstone Ritual", expantion: "#9" },
+    { name: "Construct Protector", expantion: "#9" },
+    { name: "Transmutation", expantion: "#9" },
+    { name: "Animate Dead", expantion: "#9" },
+    { name: "Mend", expantion: "#9" },
+    //{ name: "", expantion: "#" },
   ],
   item: [
     // #1
@@ -105,6 +126,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Ice Climbing Gear", expantion: "#7" },
     { name: "Snow Trekking Tools", expantion: "#7" },
     { name: "Tent", expantion: "#7" },
+    // #8
+    { name: "Bag of Gems", expantion: "#8" },
+    { name: "Spices", expantion: "#8" },
+    { name: "Theunderstone Potion", expantion: "#8" },
+    // #9
+    { name: "Theunderstone Elixir", expantion: "#9" },
+    { name: "Plate Armor", expantion: "#9" },
+    { name: "Theunderstone Ore", expantion: "#9" },
+    { name: "Crystal Light", expantion: "#9" },
+    //{ name: "", expantion: "#" },
   ]
 }
 
