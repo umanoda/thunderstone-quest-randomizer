@@ -17,7 +17,7 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "deploy": "DEPLOY_ENV=GH_PAGES npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "DEPLOY_ENV=GH_PAGES npm run build && (find dist -name *.js | xargs gzip)  && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.1",
