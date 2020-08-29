@@ -35,15 +35,15 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Longspear", expansion: "#5" },
     { name: "Magi Staff", expansion: "#5" },
     // #6
-    { name: "Fire Rod", expansion: "#6" },
-    { name: "Flaming Hammer", expansion: "#6" },
-    { name: "Frost Bow", expansion: "#6" },
-    { name: "Mechanical Harpoon", expansion: "#6" },
+    { name: "Bastard Sword", expansion: "#6" },
+    { name: "Battlepick", expansion: "#6" },
+    { name: "Cleaner's Net", expansion: "#6" },
+    { name: "The Five Points", expansion: "#6" },
     // #7
-    { name: "Bastard Sword", expansion: "#7" },
-    { name: "Battlepick", expansion: "#7" },
-    { name: "Cleaner's Net", expansion: "#7" },
-    { name: "The Five Points", expansion: "#7" },
+    { name: "Fire Rod", expansion: "#7" },
+    { name: "Flaming Hammer", expansion: "#7" },
+    { name: "Frost Bow", expansion: "#7" },
+    { name: "Mechanical Harpoon", expansion: "#7" },
     // #8
     { name: "Khopesh", expansion: "#8" },
     { name: "Avian Bow", expansion: "#8" },
