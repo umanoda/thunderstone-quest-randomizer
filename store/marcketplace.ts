@@ -178,10 +178,10 @@ const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expa
 
 const actions: ActionTree<CardState, RootState> = {
   shuffle({ commit, rootGetters }) {
-    const expansionRegexp = rootGetters["expansion/regexp"];
-    const weapons: Card[] = _shuffle("weapon", 3, expansionRegexp);
-    const magics: Card[] = _shuffle("magic", 3, expansionRegexp);
-    const items: Card[] = _shuffle("item", 2, expansionRegexp);
+    const expansionRegexp = rootGetters["expansion/regexp"],
+          weapons: Card[] = _shuffle("weapon", 3, expansionRegexp),
+          magics: Card[]  = _shuffle("magic", 3, expansionRegexp),
+          items: Card[]   = _shuffle("item", 2, expansionRegexp);
 
     commit("setCards", [...weapons, ...magics, ...items]);
   },
