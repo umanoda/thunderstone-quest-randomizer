@@ -32,6 +32,12 @@ const candidates : Candidate[][] = [
     // #7
     { name: "Arctic Animals", expansion: "#7" },
     { name: "Abyssal Servants",  expansion: "#7" },
+    //// #8
+    //{ name: "", expansion: "#8" },
+    //{ name: "",  expansion: "#8" },
+    //// #9
+    //{ name: "", expansion: "#9" },
+    //{ name: "",  expansion: "#9" },
   ],
   [
     // #1
