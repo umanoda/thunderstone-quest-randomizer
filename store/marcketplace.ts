@@ -151,7 +151,7 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
   ]
 }
 
-const state = (): CardState => ({ cards: [] })
+const state = (): CardState => ({ cards: [] });
 
 const mutations: MutationTree<CardState> = {
   setCards(state: CardState, cards: Card[]): void {
@@ -159,31 +159,41 @@ const mutations: MutationTree<CardState> = {
   }
 };
 
-const _sample = (arr: Candidate[], card_type: CARD_TYPE): Card => {
+const _sample = (arr: Card[]): Card => {
   const get_index = Math.floor(Math.random() * arr.length)
   const card = arr[get_index];
   arr.splice(get_index, 1)
-  return new Card(card.name, [], card_type, card.expansion);
+  return card;
 };
 
-const _shuffle = (card_type: "weapon" | "magic" | "item", draw_num: number, expansionRegexp: RegExp) => {
-  let temp_candidate = Array.from(candidate[card_type]).filter(card => card.expansion.match(expansionRegexp));
-  if (temp_candidate.length == 0) return [];
+const _cards =  (card_type: "weapon" | "magic" | "item", expansionRegexp: RegExp): Card[] => {
+  return Array.from(candidate[card_type])
+    .filter(card => card.expansion.match(expansionRegexp))
+    .map(c => new Card(c.name, [], card_type, c.expansion));
+}
+
+const _shuffle = (candidates: Card[],draw_num: number) => {
+  if (candidates.length == 0) return [];
   let cards = []
   for(let i = 0;  i < draw_num; i++) {
-      cards.push(_sample(temp_candidate, card_type));
+      cards.push(_sample(candidates));
   }
   return  cards;
 }
 
 const actions: ActionTree<CardState, RootState> = {
-  shuffle({ commit, rootGetters }) {
+  shuffle({ commit, rootGetters, rootState }) {
     const expansionRegexp = rootGetters["expansion/regexp"],
-          weapons: Card[] = _shuffle("weapon", 3, expansionRegexp),
-          magics: Card[]  = _shuffle("magic", 3, expansionRegexp),
-          items: Card[]   = _shuffle("item", 2, expansionRegexp);
+          numOfCards = rootState.configMarcketplace,
+          candidateWeapons = _cards("weapon", expansionRegexp),
+          candidateMagics  = _cards("magic", expansionRegexp),
+          candidateItems   = _cards("item", expansionRegexp),
+          weapons = _shuffle(candidateWeapons, numOfCards.numOfWeapons),
+          magics  = _shuffle(candidateMagics, numOfCards.numOfMagics),
+          items   = _shuffle(candidateItems, numOfCards.numOfItems),
+          any   = _shuffle(candidateWeapons.concat(candidateMagics).concat(candidateItems), numOfCards.numOfAny);
 
-    commit("setCards", [...weapons, ...magics, ...items]);
+    commit("setCards", [...weapons, ...magics, ...items, ...any]);
   },
 };
 

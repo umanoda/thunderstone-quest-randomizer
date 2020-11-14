@@ -1,5 +1,5 @@
 import { MutationTree, ActionTree, GetterTree } from "vuex";
-import { ExpansionState,RootState } from "~/types";
+import { ExpansionState, RootState } from "~/types";
 
 const state = (): ExpansionState => ({
   1: false,

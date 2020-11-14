@@ -3,21 +3,27 @@
     <h1 class="title header">Thunderstone QUEST : informal randamizer</h1>
 
     <div class="container">
-      <SelectExpansion />
-      <button class="button" @click="shuffleAll">
-        <i class="fas fa-sync-alt">Shuffle</i>
-      </button>
-      <button class="button" @click="checkAllCheckbox">
-        <i class="far fa-check-square" />
-      </button>
-      <button class="button" @click="uncheckAllCheckbox">
-        <i class="far fa-square" />
-      </button>
-      <button class="button" @click="copyToClipboard">
-        <span style="padding-right: 4px">Copy to clipboard</span>
-        <i class="fas fa-copy"></i>
-      </button>
-      <span class="message-copied" :class='[showMessageCopied ? "message-copied-show" : "message-copied-none"]'>Copied!!</span>
+      <div>
+        <SelectExpansion />
+        <ConfigMarcketplace />
+
+        <div style="margin-top: 8px;">
+          <button class="button" @click="shuffleAll">
+            <i class="fas fa-sync-alt">Shuffle</i>
+          </button>
+          <button class="button" @click="checkAllCheckbox">
+            <i class="far fa-check-square"></i>
+          </button>
+          <button class="button" @click="uncheckAllCheckbox">
+            <i class="far fa-square"></i>
+          </button>
+          <button class="button" @click="copyToClipboard">
+            <span style="padding-right: 4px">Copy to clipboard</span>
+            <i class="fas fa-copy"></i>
+          </button>
+          <span class="message-copied" :class='[showMessageCopied ? "message-copied-show" : "message-copied-none"]'>Copied!!</span>
+        </div>
+      </div>
     </div>
 
     <div class="container">
@@ -39,12 +45,14 @@ import { CardState } from "~/types";
 import GameElement from "~/components/GameElement.vue"
 import RandomSetup from "~/components/RandomSetup.vue"
 import SelectExpansion from "~/components/SelectExpansion.vue"
+import ConfigMarcketplace from "~/components/ConfigMarcketplace.vue"
 
 @Component({
   components: {
     GameElement,
     RandomSetup,
-    SelectExpansion
+    SelectExpansion,
+    ConfigMarcketplace,
   }
 })
 export default class extends Vue {
