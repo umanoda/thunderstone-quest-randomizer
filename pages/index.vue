@@ -5,7 +5,12 @@
     <div class="container">
       <SelectExpansion />
       <button class="button" @click="shuffleAll">
-        <i class="fas fa-sync-alt">ALL</i>
+        <i class="fas fa-sync-alt">Shuffle</i>
+      </button>
+      <button class="button">
+        <i :class="isCheckedAll ? 'far fa-square' : 'far fa-check-square'" @click="toggleAllCheckbox">
+          {{ isCheckedAll ? 'Reset All Expansion' : 'Check All Expansion' }}
+        </i>
       </button>
       <button class="button" @click="copyToClipboard">
         <span style="padding-right: 4px">Copy to clipboard</span>
@@ -55,12 +60,28 @@ export default class extends Vue {
     }
   }
 
+  get isCheckedAll() {
+    for (let k in this.expansion) {
+      if (!this.expansion[k]) return false;
+    }
+
+    return true;
+  }
+
   mounted(){
     this.shuffleAll();
   }
 
+  resetExpansionClass() {
+    return "far fa-check-square";
+  }
+
   shuffleAll(){
     this.$store.dispatch("shuffleAll");
+  }
+
+  toggleAllCheckbox() {
+    this.$store.dispatch("expansion/changeAllUseExpansion", {enable: !this.isCheckedAll})
   }
 
   copyToClipboard(){
