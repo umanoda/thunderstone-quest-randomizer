@@ -7,10 +7,11 @@
       <button class="button" @click="shuffleAll">
         <i class="fas fa-sync-alt">Shuffle</i>
       </button>
-      <button class="button">
-        <i :class="isCheckedAll ? 'far fa-square' : 'far fa-check-square'" @click="toggleAllCheckbox">
-          {{ isCheckedAll ? 'Reset All Expansion' : 'Check All Expansion' }}
-        </i>
+      <button class="button" @click="checkAllCheckbox">
+        <i class="far fa-check-square" />
+      </button>
+      <button class="button" @click="uncheckAllCheckbox">
+        <i class="far fa-square" />
       </button>
       <button class="button" @click="copyToClipboard">
         <span style="padding-right: 4px">Copy to clipboard</span>
@@ -60,14 +61,6 @@ export default class extends Vue {
     }
   }
 
-  get isCheckedAll() {
-    for (let k in this.expansion) {
-      if (!this.expansion[k]) return false;
-    }
-
-    return true;
-  }
-
   mounted(){
     this.shuffleAll();
   }
@@ -80,8 +73,18 @@ export default class extends Vue {
     this.$store.dispatch("shuffleAll");
   }
 
-  toggleAllCheckbox() {
-    this.$store.dispatch("expansion/changeAllUseExpansion", {enable: !this.isCheckedAll})
+  setAllCheckbox(val: boolean) {
+    this.$store.dispatch("expansion/changeAllUseExpansion", {enable: val});
+  }
+
+  checkAllCheckbox() {
+    if(this.isAllCheckbox(true)) return;
+    this.setAllCheckbox(true);
+  }
+
+  uncheckAllCheckbox() {
+    if(this.isAllCheckbox(false)) return;
+    this.setAllCheckbox(false);
   }
 
   copyToClipboard(){
@@ -123,6 +126,13 @@ export default class extends Vue {
     // remove tempolary element
     document.body.removeChild(tmp);
     this.showMessageCopied = true;
+  }
+
+  private isAllCheckbox(val: boolean) {
+    for (let k in this.expansion) {
+      if(this.expansion[k] !== val) return false;
+    }
+    return true;
   }
 }
 </script>
