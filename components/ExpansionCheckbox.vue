@@ -22,23 +22,19 @@ import {
 export default class ExpansionCheckbox extends Vue {
   @Prop() expansion?: number;
   @Prop() force?: boolean;
-  checked?: boolean;
 
   get isForce() {
     return this.$props.force !== undefined;
   }
 
-  created() {
-    if(this.isForce) {
-      this.checked = this.$props.force;
-    } else {
-      this.checked = this.$store.state.expansion[this.$props.expansion]
-    }
+  get checked() {
+    if(this.isForce) return this.$props.force;
+
+    return this.$store.state.expansion[this.$props.expansion];
   }
 
   handleChange(val: any, val2: any) {
-    this.checked = !this.checked
-    this.$store.dispatch("expansion/changeUseExpansion", {expansionNumber: this.$props.expansion, enable: this.checked})
+    this.$store.dispatch("expansion/changeUseExpansion", {expansionNumber: this.$props.expansion, enable: !this.checked})
   }
 
   title(expansionNum: number) {

@@ -17,13 +17,12 @@
 import {
   Vue,
   Component,
-  Prop,
 } from "nuxt-property-decorator"
 import ExpansionCheckbox from './ExpansionCheckbox.vue';
 
 @Component({
   components: { ExpansionCheckbox }
 })
-export default class extends Vue {
+export default class SelectExpansion extends Vue {
 }
 </script>
