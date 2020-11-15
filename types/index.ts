@@ -6,6 +6,7 @@ export type EXPANSION = "#1" | "#2" | "#3" | "#4" | "#5" | "#6" | "#7" | "#8" | 
 export type ITEM_TYPE = "weapon" | "magic" | "item";
 export type CARD_TYPE = ITEM_TYPE | "hero" | "monster";
 
+/* eslint-disable @typescript-eslint/ban-types */
 export interface CardStore {
   shuffle: Function;
 }
@@ -13,18 +14,18 @@ export interface CardStore {
 export class Card {
   name: string;
   tags: string[];
-  card_type: CARD_TYPE;
+  cardType: CARD_TYPE;
   expansion: EXPANSION;
 
-  constructor(name: string, tags: string[], card_type: CARD_TYPE, expansion: EXPANSION) {
+  constructor(name: string, tags: string[], cardType: CARD_TYPE, expansion: EXPANSION) {
     this.name = name;
     this.tags = tags;
-    this.card_type = card_type;
+    this.cardType = cardType;
     this.expansion = expansion;
   }
 
   id(): string {
-    return `${this.card_type}-${this.name}`;
+    return `${this.cardType}-${this.name}`;
   }
 
   symbol(): string {
