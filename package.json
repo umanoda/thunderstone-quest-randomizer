@@ -10,7 +10,8 @@
     "@nuxtjs/pwa": "^3.2.2",
     "nuxt": "^2.14.7",
     "nuxt-property-decorator": "^2.8.0",
-    "vuex-class": "0.3.2"
+    "vuex": "^3.5.1",
+    "vuex-class": "^0.3.2"
   },
   "scripts": {
     "dev": "nuxt-ts",
