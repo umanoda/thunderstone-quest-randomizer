@@ -79,12 +79,12 @@ const candidates: Candidate[][] = [
       name: "Abyssal Servants",
       expansion: "#7",
     },
-    // // #8
-    // { name: "", expansion: "#8" },
-    // { name: "",  expansion: "#8" },
-    // // #9
-    // { name: "", expansion: "#9" },
-    // { name: "",  expansion: "#9" },
+    // #8
+    { name: "Beetle Bevy", expansion: "#8" },
+    { name: "Desert Dwellers",  expansion: "#8" },
+    // #9
+    { name: "Material Spirits", expansion: "#9" },
+    { name: "Mystical Kobolds",  expansion: "#9" },
   ],
   [
     // #1
@@ -153,6 +153,12 @@ const candidates: Candidate[][] = [
       name: "Tundra Wolf Pack",
       expansion: "#7",
     },
+    // #8
+    { name: "Naga Nomads", expansion: "#8" },
+    { name: "Sand Spirits", expansion: "#8" },
+    // #9
+    { name: "Gremlins", expansion: "#9" },
+    { name: "C.C.O.V. Gang", expansion: "#9" },
   ],
   [
     // #1
@@ -221,6 +227,12 @@ const candidates: Candidate[][] = [
       name: "Ice Behemoths",
       expansion: "#7",
     },
+    // #8
+    { name: "Amtephetes's Forces", expansion: "#8" },
+    { name: "Arid Atrocities", expansion: "#8" },
+    // #9
+    { name: "Mech Menaces", expansion: "#9" },
+    { name: "Automatons", expansion: "#9" },
   ],
 ];
 
