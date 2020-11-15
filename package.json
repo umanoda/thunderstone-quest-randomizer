@@ -18,6 +18,7 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "deploy": "DEPLOY_ENV=GH_PAGES npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {

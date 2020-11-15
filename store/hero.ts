@@ -301,9 +301,9 @@ const mutations: MutationTree<CardState> = {
 };
 
 const _sample = (arr: Candidate[]): [Card, Candidate[]] => {
-  const get_index = Math.floor(Math.random() * arr.length);
-  const card = arr[get_index];
-  arr.splice(get_index, 1);
+  const getIndex = Math.floor(Math.random() * arr.length);
+  const card = arr[getIndex];
+  arr.splice(getIndex, 1);
   if (!card) {
     console.error(`Invalid card: ${card}`);
     return [new Card("---", [], "hero", "#1"), arr];
@@ -374,7 +374,7 @@ const actions: ActionTree<CardState, RootState> = {
     const expansionRegexp = rootGetters["expansion/regexp"];
     while (!_checkHeroJobs(cards)) {
       cards = _shuffle(expansionRegexp);
-      if (cards.length == 0) break;
+      if (cards.length === 0) break;
       if (i++ > 10000) {
         console.error("counter out");
         break; // against for infinity loop

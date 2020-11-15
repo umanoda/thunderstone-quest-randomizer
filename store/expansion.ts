@@ -32,7 +32,7 @@ const mutations: MutationTree<ExpansionState> = {
 
 const actions: ActionTree<ExpansionState, RootState> = {
   changeUseExpansion(
-    { commit, rootState },
+    { commit },
     payload: {
       expansionNumber: number;
       enable: boolean;
@@ -45,7 +45,7 @@ const actions: ActionTree<ExpansionState, RootState> = {
     this.dispatch("shuffleAll");
   },
   changeAllUseExpansion(
-    { commit, rootState },
+    { commit },
     payload: {
       enable: boolean;
     }

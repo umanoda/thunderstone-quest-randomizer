@@ -17,6 +17,7 @@ const routerBase =
         },
       };
 
+/* eslint-disable camelcase */
 const manifest = {
   name: "thunderstone-quest-randomizer",
   short_name: "ThunderStoneQ Rand",

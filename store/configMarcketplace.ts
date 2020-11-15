@@ -1,5 +1,5 @@
 import { RootState, ConfigMarcketplaceState } from "~/types";
-import { MutationTree, ActionTree, GetterTree } from "vuex";
+import { MutationTree, ActionTree } from "vuex";
 
 const state = (): ConfigMarcketplaceState => ({
   numOfWeapons: 3,
@@ -27,7 +27,7 @@ const mutations: MutationTree<ConfigMarcketplaceState> = {
 
 const actions: ActionTree<ConfigMarcketplaceState, RootState> = {
   changeNumOfCards(
-    { commit, rootState, state },
+    { commit, state },
     payload: {
       cardType: "weapons" | "magics" | "items";
       value: number;

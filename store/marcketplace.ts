@@ -1,6 +1,5 @@
-import { RootState, CardState, Card, CARD_TYPE, EXPANSION } from "~/types";
+import { RootState, CardState, Card, ITEM_TYPE, EXPANSION } from "~/types";
 import { MutationTree, ActionTree } from "vuex";
-type ITEM_TYPE = "weapon" | "magic" | "item";
 type Candidate = {
   name: string;
   expansion: EXPANSION;
@@ -482,22 +481,22 @@ const mutations: MutationTree<CardState> = {
 };
 
 const _sample = (arr: Card[]): Card => {
-  const get_index = Math.floor(Math.random() * arr.length);
-  const card = arr[get_index];
-  arr.splice(get_index, 1);
+  const getIndex = Math.floor(Math.random() * arr.length);
+  const card = arr[getIndex];
+  arr.splice(getIndex, 1);
   return card;
 };
 
-const _cards = (card_type: "weapon" | "magic" | "item", expansionRegexp: RegExp): Card[] => {
-  return Array.from(candidate[card_type])
+const _cards = (cardType: ITEM_TYPE, expansionRegexp: RegExp): Card[] => {
+  return Array.from(candidate[cardType])
     .filter((card) => card.expansion.match(expansionRegexp))
-    .map((c) => new Card(c.name, [], card_type, c.expansion));
+    .map((c) => new Card(c.name, [], cardType, c.expansion));
 };
 
-const _shuffle = (candidates: Card[], draw_num: number) => {
-  if (candidates.length == 0) return [];
+const _shuffle = (candidates: Card[], drawNum: number) => {
+  if (candidates.length === 0) return [];
   const cards = [];
-  for (let i = 0; i < draw_num; i++) {
+  for (let i = 0; i < drawNum; i++) {
     cards.push(_sample(candidates));
   }
   return cards;

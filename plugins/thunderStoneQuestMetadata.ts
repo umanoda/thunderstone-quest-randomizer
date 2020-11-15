@@ -64,6 +64,7 @@ declare module "@nuxt/types" {
   }
 }
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 declare module "vuex/types/index" {
   interface Store<S> {
     $metadatas: {
@@ -72,6 +73,7 @@ declare module "vuex/types/index" {
   }
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const tsqPlugin: Plugin = (context: any, inject: any) => {
   const metadatas = {
     expansion: expansionMetadatas,
