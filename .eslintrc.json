@@ -1,9 +1,27 @@
 {
-  "extends": ["vue", "plugin:vue/recommended"],
+  "extends": [
+    "vue",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
   "env": {
     "browser": true
   },
   "rules": {
-    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
+    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }],
+    "prettier/prettier": ["error", {
+      "singleQuote": false,
+      "semi": true,
+      "printWidth": 150
+    }]
   }
 }

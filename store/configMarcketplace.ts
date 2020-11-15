@@ -9,29 +9,43 @@ const state = (): ConfigMarcketplaceState => ({
 });
 
 const mutations: MutationTree<ConfigMarcketplaceState> = {
-  setNumOfCards(state: ConfigMarcketplaceState, next: { numOfWeapons: number, numOfMagics: number, numOfItems: number, numOfAny: number } ): void {
+  setNumOfCards(
+    state: ConfigMarcketplaceState,
+    next: {
+      numOfWeapons: number;
+      numOfMagics: number;
+      numOfItems: number;
+      numOfAny: number;
+    }
+  ): void {
     state.numOfWeapons = next.numOfWeapons;
     state.numOfMagics = next.numOfMagics;
     state.numOfItems = next.numOfItems;
     state.numOfAny = next.numOfAny;
-  }
+  },
 };
 
 const actions: ActionTree<ConfigMarcketplaceState, RootState> = {
-  changeNumOfCards({ commit, rootState, state }, payload: { cardType: "weapons" | "magics" | "items", value: number }) {
-    let numOfWeapons = state.numOfWeapons,
-        numOfMagics  = state.numOfMagics,
-        numOfItems   = state.numOfItems;
-    switch(payload.cardType) {
+  changeNumOfCards(
+    { commit, rootState, state },
+    payload: {
+      cardType: "weapons" | "magics" | "items";
+      value: number;
+    }
+  ) {
+    let numOfWeapons = state.numOfWeapons;
+    let numOfMagics = state.numOfMagics;
+    let numOfItems = state.numOfItems;
+    switch (payload.cardType) {
       case "weapons":
         numOfWeapons = payload.value;
-        break
+        break;
       case "magics":
         numOfMagics = payload.value;
-        break
+        break;
       case "items":
         numOfItems = payload.value;
-        break
+        break;
     }
     const numOfAny = 8 - numOfWeapons - numOfMagics - numOfItems;
 
