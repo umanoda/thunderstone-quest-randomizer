@@ -3,6 +3,13 @@
   "description": "Nuxt.js TypeScript project",
   "version": "2.9.2",
   "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "deploy": "DEPLOY_ENV=GH_PAGES npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
   "dependencies": {
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/axios": "5.6.0",
@@ -12,21 +19,14 @@
     "nuxt-property-decorator": "2.3.0",
     "vuex-class": "0.3.2"
   },
-  "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
-    "deploy": "DEPLOY_ENV=GH_PAGES npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
-  },
   "devDependencies": {
-    "@nuxt/types": "^2.14.1",
-    "@nuxt/typescript-build": "^2.0.2",
-    "@types/node": "10.14.17",
-    "@types/webpack-env": "1.14.0",
-    "eslint": "^7.6.0",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@types/node": "18.0.5",
+    "@types/webpack-env": "1.17.0",
+    "eslint": "^8.19.0",
     "eslint-config-vue": "*",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^9.2.0",
     "push-dir": "^0.4.1"
   }
 }
