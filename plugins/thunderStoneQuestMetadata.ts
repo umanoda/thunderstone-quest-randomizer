@@ -1,12 +1,12 @@
-import { Plugin } from '@nuxt/types'
+import { Plugin } from "@nuxt/types";
 
 type tExpansionMetadata = {
-  title: string,
-  symbol: string,
+  title: string;
+  symbol: string;
 };
 
 type tExpansionMetadatas = {
-  [key: number]: tExpansionMetadata,
+  [key: number]: tExpansionMetadata;
 };
 
 export const expansionMetadatas: tExpansionMetadatas = {
@@ -21,31 +21,39 @@ export const expansionMetadatas: tExpansionMetadatas = {
   9: { title: "Clockwork Destiny", symbol: "⌛"},
   10: { title: "Darkness Rising", symbol: "💀"},
   11: { title: "Miricelle's Return", symbol: "🚪"},
-}
+};
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
   interface Vue {
-    $metadatas: { expansion: tExpansionMetadatas }
+    $metadatas: {
+      expansion: tExpansionMetadatas;
+    };
   }
 }
 
-declare module '@nuxt/types' {
+declare module "@nuxt/types" {
   interface NuxtAppOptions {
-    $metadatas: { expansion: tExpansionMetadatas }
+    $metadatas: {
+      expansion: tExpansionMetadatas;
+    };
   }
 }
 
-declare module 'vuex/types/index' {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+declare module "vuex/types/index" {
   interface Store<S> {
-    $metadatas: { expansion: tExpansionMetadatas }
+    $metadatas: {
+      expansion: tExpansionMetadatas;
+    };
   }
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const tsqPlugin: Plugin = (context: any, inject: any) => {
   const metadatas = {
     expansion: expansionMetadatas,
   };
-  inject('metadatas', metadatas);
-}
+  inject("metadatas", metadatas);
+};
 
 export default tsqPlugin;

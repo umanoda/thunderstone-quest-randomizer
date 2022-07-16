@@ -1,5 +1,5 @@
 <template>
-  <div class="tsq-card" :class="'tsq-'+card.card_type">
+  <div class="tsq-card" :class="'tsq-'+card.cardType">
     <span class="card_expansion">{{card.symbol()}}</span>
     <span class="card_expansion">{{card.expansion}}</span>
     <span class="card_name">{{card.name}}</span>
