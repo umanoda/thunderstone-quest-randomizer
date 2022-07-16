@@ -11,6 +11,8 @@ const state = (): ExpansionState => ({
   7: true,
   8: true,
   9: true,
+  10: true,
+  11: true,
 })
 
 const mutations: MutationTree<ExpansionState> = {

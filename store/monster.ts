@@ -32,6 +32,18 @@ const candidates : Candidate[][] = [
     // #7
     { name: "Arctic Animals", expansion: "#7" },
     { name: "Abyssal Servants",  expansion: "#7" },
+    // #8
+    { name: "Beetle Bevy", expansion: "#8" },
+    { name: "Desert Dwellers",  expansion: "#8" },
+    // #9
+    { name: "Material Spirits", expansion: "#9" },
+    { name: "Mystical Kobolds",  expansion: "#9" },
+    // #10
+    { name: "Bloodthirsty Beasts", expansion: "#10" },
+    { name: "Possessed Objects",  expansion: "#10" },
+    // #11
+    { name: "Possessed Protagonists", expansion: "#11" },
+    { name: "Treacherous Turncoats",  expansion: "#11" },
   ],
   [
     // #1
@@ -55,6 +67,18 @@ const candidates : Candidate[][] = [
     // #7
     { name: "Bloodfrost Clan", expansion: "#7" },
     { name: "Tundra Wolf Pack",  expansion: "#7" },
+    // #8
+    { name: "Naga Nomads", expansion: "#8" },
+    { name: "Sand Spirits",  expansion: "#8" },
+    // #9
+    { name: "C.C.O.V Gang", expansion: "#9" },
+    { name: "Gremlins",  expansion: "#9" },
+    // #10
+    { name: "Enthralled Villagers", expansion: "#10" },
+    { name: "Fearsome Phantasms",  expansion: "#10" },
+    // #11
+    { name: "Orcish Allies", expansion: "#11" },
+    { name: "Resurrected Remnants",  expansion: "#11" },
   ],
   [
     // #1
@@ -78,6 +102,18 @@ const candidates : Candidate[][] = [
     // #7
     { name: "Frozen Natives", expansion: "#7" },
     { name: "Ice Behemoths",  expansion: "#7" },
+    // #8
+    { name: "Arid Atrocities", expansion: "#8" },
+    { name: "Amtephetes's Forces",  expansion: "#8" },
+    // #9
+    { name: "Automatons", expansion: "#9" },
+    { name: "Mech Menaces",  expansion: "#9" },
+    // #10
+    { name: "Lost Lycanthropes", expansion: "#10" },
+    { name: "Vicious Vampires",  expansion: "#10" },
+    // #11
+    { name: "Rift Natives", expansion: "#11" },
+    { name: "Scion Invaders",  expansion: "#11" },
   ]
 ];
 

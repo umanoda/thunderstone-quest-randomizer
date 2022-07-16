@@ -1,7 +1,7 @@
 import { expansionMetadatas } from '~/plugins/thunderStoneQuestMetadata'
 export * from './state';
 
-export type EXPANSION = '#1'|'#2'|'#3'|'#4'|'#5'|'#6'|'#7'|'#8'|'#9';
+export type EXPANSION = '#1'|'#2'|'#3'|'#4'|'#5'|'#6'|'#7'|'#8'|'#9' | '#10' | '#11';
 
 export type CARD_TYPE = "weapon" | "magic" | "item" | "hero" | "monster";
 

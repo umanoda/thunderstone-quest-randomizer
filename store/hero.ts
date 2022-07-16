@@ -72,6 +72,20 @@ const DECK: Candidate[] = [
   { name: "Tilka the Sculptor", jobs: ["ROGUE"], expansion: "#9" },
   { name: "Caslech", jobs: ["ROGUE", "WIZARD"], expansion: "#9" },
   { name: "Liss", jobs: ["WIZARD"], expansion: "#9" },
+  // #10
+  { name: "Mirak Ilaskas", jobs: ["CLERIC", "ROGUE"], expansion: "#10" },
+  { name: "Barmin Ironclaw", jobs: ["FIGHTER"], expansion: "#10" },
+  { name: "Kaiya Winters", jobs: ["FIGHTER", "WIZARD"], expansion: "#10" },
+  { name: "Stelias the Dark", jobs: ["ROGUE"], expansion: "#10" },
+  { name: "Karn Wulfric", jobs: ["CLERIC"], expansion: "#10" },
+  { name: "Ursulette", jobs: ["WIZARD"], expansion: "#10" },
+  // #11
+  { name: "Armatir the Proud", jobs: ["FIGHTER"], expansion: "#11" },
+  { name: "Corster the Shade", jobs: ["ROGUE"], expansion: "#11" },
+  { name: "Donatien Pinnick", jobs: ["FIGHTER"], expansion: "#11" },
+  { name: "Gilora the Trickster", jobs: ["WIZARD", "ROGUE"], expansion: "#11" },
+  { name: "Leila and Zurien", jobs: ["ROGUE", "CLERIC"], expansion: "#11" },
+  { name: "Sibyl", jobs: ["WIZARD", "CLERIC"], expansion: "#11" },
 ]
 
 const state = (): CardState => ({ cards: [] })

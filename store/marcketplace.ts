@@ -52,6 +52,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Keltarian Bow", expansion: "#9" },
     { name: "Theunderstone Hammer", expansion: "#9" },
     { name: "Theunderstone Rod", expansion: "#9" },
+    // #10
+    { name: "Balanced Staff ", expansion: "#10" },
+    { name: "Bow of the Beast", expansion: "#10" },
+    { name: "Pitchfork", expansion: "#10" },
+    { name: "Whip", expansion: "#10" },
+    // #11
+    { name: "Glaive", expansion: "#11" },
+    { name: "Midnight Katana", expansion: "#11" },
+    { name: "Stone Maul", expansion: "#11" },
+    { name: "Throwing Dagger", expansion: "#11" },
     // { name: "", expansion: "#" },
   ],
   magic: [
@@ -101,6 +111,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Transmutation", expansion: "#9" },
     { name: "Animate Dead", expansion: "#9" },
     { name: "Mend", expansion: "#9" },
+    // #10
+    { name: "Dance with the Devil", expansion: "#10" },
+    { name: "Exorcise", expansion: "#10" },
+    { name: "Morning Dawn", expansion: "#10" },
+    { name: "Superior Mind", expansion: "#10" },
+    // #11
+    { name: "Banish", expansion: "#11" },
+    { name: "Phantasm", expansion: "#11" },
+    { name: "Sonic Scream", expansion: "#11" },
+    { name: "Spirit Shield", expansion: "#11" },
     //{ name: "", expansion: "#" },
   ],
   item: [
@@ -147,6 +167,16 @@ const candidate: {[k in ITEM_TYPE]:Candidate[]} = {
     { name: "Plate Armor", expansion: "#9" },
     { name: "Theunderstone Ore", expansion: "#9" },
     { name: "Crystal Light", expansion: "#9" },
+    // #10
+    { name: "Black Cat", expansion: "#10" },
+    { name: "Dreamcatcher", expansion: "#10" },
+    { name: "Grimwood Wand", expansion: "#10" },
+    { name: "Torch", expansion: "#10" },
+    // #11
+    { name: "Manacles", expansion: "#11" },
+    { name: "Potion of Giant Strength", expansion: "#11" },
+    { name: "Riftling", expansion: "#11" },
+    { name: "Traveling Merchant", expansion: "#11" },
     //{ name: "", expansion: "#" },
   ]
 }
