@@ -19,6 +19,8 @@ export const expansionMetadatas: tExpansionMetadatas = {
   7: { title: "Frozen in Time", symbol: "❄"},
   8: { title: "Vengeful Sands", symbol: "🏜️"},
   9: { title: "Clockwork Destiny", symbol: "⌛"},
+  10: { title: "Darkness Rising", symbol: "💀"},
+  11: { title: "Miricelle's Return", symbol: "🚪"},
 }
 
 declare module 'vue/types/vue' {
