@@ -4,14 +4,11 @@ import { resolve } from 'node:path';
 
 export default defineConfig({
   plugins: [react()],
+  root: 'src',
   server: {
-    host: true,
+    watch: {
+      usePolling: true,
+    },
+    hmr: true, // デフォルトでtrueです
   },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'src/index.html')
-      }
-    }
-  }
 });
