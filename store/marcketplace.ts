@@ -159,6 +159,25 @@ const candidate: {
     { name: "Midnight Katana", expansion: "#11" },
     { name: "Stone Maul", expansion: "#11" },
     { name: "Throwing Dagger", expansion: "#11" },
+    // #12
+    { name: "Bangarang", expansion: "#12" },
+    { name: "Forest’s Mischief", expansion: "#12" },
+    { name: "Lightning Rod", expansion: "#12" },
+    // #13
+    { name: "Golden Horn", expansion: "#13" },
+    { name: "Leaf Blade", expansion: "#13" },
+    { name: "Needle Bow", expansion: "#13" },
+    { name: "Treant Root", expansion: "#13" },
+    // #14
+    { name: "Cutlass", expansion: "#14" },
+    { name: "Épée", expansion: "#14" },
+    { name: "Mast Mangler", expansion: "#14" },
+    { name: "Trident", expansion: "#14" },
+    // #15
+    { name: "Blowdart", expansion: "#15" },
+    { name: "Bonesword", expansion: "#15" },
+    { name: "Master’s Crossbow", expansion: "#15" },
+    { name: "Spear", expansion: "#15" },
     // { name: "", expansion: "#" },
   ],
   magic: [
@@ -314,6 +333,25 @@ const candidate: {
     { name: "Phantasm", expansion: "#11" },
     { name: "Sonic Scream", expansion: "#11" },
     { name: "Spirit Shield", expansion: "#11" },
+    // #12
+    { name: "Animal Affinity", expansion: "#12" },
+    { name: "Borrowed Power", expansion: "#12" },
+    { name: "Precognition", expansion: "#12" },
+    { name: "Righteous Blast", expansion: "#12" },
+    // #13
+    { name: "Shape Change", expansion: "#13" },
+    { name: "Spike Growth", expansion: "#13" },
+    { name: "Strengthen Ally", expansion: "#13" },
+    { name: "Swarm Strike", expansion: "#13" },
+    // #14
+    { name: "Swab the Deck", expansion: "#14" },
+    { name: "The Black Spot", expansion: "#14" },
+    { name: "Whirlpool", expansion: "#14" },
+    // #15
+    { name: "Po’s Sight", expansion: "#15" },
+    { name: "Summon Qaitu", expansion: "#15" },
+    { name: "Tattoo", expansion: "#15" },
+    { name: "Teeth of the Earth", expansion: "#15" },
     //{ name: "", expansion: "#" },
   ],
   item: [
@@ -460,6 +498,23 @@ const candidate: {
     { name: "Potion of Giant Strength", expansion: "#11" },
     { name: "Riftling", expansion: "#11" },
     { name: "Traveling Merchant", expansion: "#11" },
+    // #12
+    { name: "Nyla’s Shield", expansion: "#12" },
+    { name: "Liquid Gold", expansion: "#12" },
+    { name: "Deck of Spirits", expansion: "#12" },
+    // #13
+    { name: "Barkskin Armor", expansion: "#13" },
+    { name: "Craftsman’s Tools", expansion: "#13" },
+    { name: "Magic Flute", expansion: "#13" },
+    // #14
+    { name: "Bottle of Rum", expansion: "#14" },
+    { name: "Hidden Stash", expansion: "#14" },
+    { name: "Ship in a Bottle", expansion: "#14" },
+    { name: "Spyglass", expansion: "#14" },
+    // #15
+    { name: "Fishing Rod", expansion: "#15" },
+    { name: "Pendant of Gifts", expansion: "#15" },
+    { name: "Star-Shaped Herb", expansion: "#15" },
     //{ name: "", expansion: "#" },
   ]
 };

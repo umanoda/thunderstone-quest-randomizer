@@ -21,6 +21,10 @@ export const expansionMetadatas: tExpansionMetadatas = {
   9: { title: "Clockwork Destiny", symbol: "⌛"},
   10: { title: "Darkness Rising", symbol: "💀"},
   11: { title: "Miricelle's Return", symbol: "🚪"},
+  12: { title: "Nature’s Wrath", symbol: "🐺"},
+  13: { title: "Rotten Roots", symbol: "🦋"},
+  14: { title: "Raging Seas", symbol: "🏴‍☠️"},
+  15: { title: "Ancient Adversaries", symbol: "🗿"},
 };
 
 declare module "vue/types/vue" {

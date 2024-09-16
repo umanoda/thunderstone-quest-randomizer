@@ -22,6 +22,10 @@
       <ExpansionCheckbox :expansion=9 />
       <ExpansionCheckbox :expansion=10 />
       <ExpansionCheckbox :expansion=11 />
+      <ExpansionCheckbox :expansion=12 />
+      <ExpansionCheckbox :expansion=13 />
+      <ExpansionCheckbox :expansion=14 />
+      <ExpansionCheckbox :expansion=15 />
     </div>
 </template>
 

@@ -278,6 +278,34 @@ const DECK: Candidate[] = [
   { name: "Gilora the Trickster", jobs: ["WIZARD", "ROGUE"], expansion: "#11" },
   { name: "Leila and Zurien", jobs: ["ROGUE", "CLERIC"], expansion: "#11" },
   { name: "Sibyl", jobs: ["WIZARD", "CLERIC"], expansion: "#11" },
+  // #13
+  { name: "General Nyla Rivers", jobs: ["FIGHTER", "CLERIC"], expansion: "#12" },
+  { name: "Kheih", jobs: ["WIZARD"], expansion: "#12" },
+  { name: "Krakhar Stonehand", jobs: ["WIZARD","WIZARD"], expansion: "#12" },
+  { name: "Pibbert the Dextrous", jobs: ["ROGUE"], expansion: "#12" },
+  { name: "Primelda Adhana", jobs: ["FIGHTER", "ROGUE"], expansion: "#12" },
+  { name: "Strin Doxit", jobs: ["FIGHTER", "CLERIC"], expansion: "#12" },
+  // #13
+  { name: "Amber Leafspark", jobs: ["FIGHTER"], expansion: "#13" },
+  { name: "Bernhard the Prepared", jobs: ["WIZARD"], expansion: "#13" },
+  { name: "Killian Silanus", jobs: ["CLERIC"], expansion: "#13" },
+  { name: "Phelorna", jobs: ["CLERIC", "WIZARD"], expansion: "#13" },
+  { name: "Walnut Silvergrove", jobs: ["ROGUE"], expansion: "#13" },
+  { name: "Walnut Silvergrove", jobs: ["FIGHTER", "ROGUE"], expansion: "#13" },
+  // #14
+  { name: "Adaltrude Stickyfingers", jobs: ["CLERIC", "ROGUE"], expansion: "#14" },
+  { name: "Gurgelion", jobs: ["WIZARD"], expansion: "#14" },
+  { name: "Josephine Morgan", jobs: ["CLERIC"], expansion: "#14" },
+  { name: "Nimiane", jobs: ["FIGHTER"], expansion: "#14" },
+  { name: "Steele Gargkson", jobs: ["FIGHTER", "WIZARD"], expansion: "#14" },
+  { name: "Taegen “The Fox” Glynfir", jobs: ["FIGHTER", "ROGUE"], expansion: "#14" },
+  // #15
+  { name: "Adallind the Noble", jobs: ["CLERIC"], expansion: "#15" },
+  { name: "Archibald", jobs: ["WIZARD"], expansion: "#15" },
+  { name: "Duridmaes Runeseeker", jobs: ["ROGUE"], expansion: "#15" },
+  { name: "Iolas", jobs: ["FIGHTER","ROGUE"], expansion: "#15" },
+  { name: "Joanna", jobs: ["FIGHTER"], expansion: "#15" },
+  { name: "Mongoo", jobs: ["CLERIC", "WIZARD"], expansion: "#15" },
 ];
 
 const state = (): CardState => ({

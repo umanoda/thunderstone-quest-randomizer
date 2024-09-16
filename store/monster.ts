@@ -91,6 +91,18 @@ const candidates: Candidate[][] = [
     // #11
     { name: "Possessed Protagonists", expansion: "#11" },
     { name: "Treacherous Turncoats",  expansion: "#11" },
+    // #12
+    { name: "Flowering Fauna", expansion: "#12" },
+    { name: "Mutant Beasties", expansion: "#12" },
+    // #13
+    { name: "Army Ants", expansion: "#13" },
+    { name: "Birds and Creatures", expansion: "#13" },
+    // #14
+    { name: "Brigands", expansion: "#14" },
+    { name: "House of Klubba", expansion: "#14" },
+    // #15
+    { name: "Halfling Mystics", expansion: "#15" },
+    { name: "Jungle Threats", expansion: "#15" },
   ],
   [
     // #1
@@ -165,6 +177,18 @@ const candidates: Candidate[][] = [
     // #11
     { name: "Orcish Allies", expansion: "#11" },
     { name: "Resurrected Remnants",  expansion: "#11" },
+    // #12
+    { name: "Elven Rebels", expansion: "#12" },
+    { name: "Troll Ruffians", expansion: "#12" },
+    // #13
+    { name: "Diminutive Druids", expansion: "#13" },
+    { name: "Tree Spirits", expansion: "#13" },
+    // #14
+    { name: "Murderous Mermaids", expansion: "#14" },
+    { name: "Queen's Crew", expansion: "#14" },
+    // #15
+    { name: "Explorer Ghosts", expansion: "#15" },
+    { name: "Tribal Elves", expansion: "#15" },
   ],
   [
     // #1
@@ -239,6 +263,18 @@ const candidates: Candidate[][] = [
     // #11
     { name: "Rift Natives", expansion: "#11" },
     { name: "Scion Invaders",  expansion: "#11" },
+    // #12
+    { name: "Ent Army", expansion: "#12" },
+    { name: "The Consumed", expansion: "#12" },
+    // #13
+    { name: "Fiendish Fairies", expansion: "#13" },
+    { name: "Mushroom Herd", expansion: "#13" },
+    // #14
+    { name: "Ghost Ship", expansion: "#14" },
+    { name: "Sea Creatures", expansion: "#14" },
+    // #15
+    { name: "Celestial Half-Breeds", expansion: "#15" },
+    { name: "Lava Dwarves", expansion: "#15" },
   ]
 ];
 
