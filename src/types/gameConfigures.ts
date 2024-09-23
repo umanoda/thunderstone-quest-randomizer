@@ -1,6 +1,11 @@
 import type { EXPANSION } from "./consts";
 
-export type ConfigMarcketplaceState = {
+export type ConfigGame = {
+  configExpansion: ConfigExpansion;
+  configMarketplace: ConfigMarketplace;
+}
+
+export type ConfigMarketplace = {
   numOfWeapons: number;
   numOfMagics: number;
   numOfItems: number;
