@@ -1,10 +1,10 @@
 import {
-  createContext,
   type Dispatch,
-  useContext,
-  useReducer,
   type FC,
   type ReactNode,
+  createContext,
+  useContext,
+  useReducer,
 } from "react";
 
 import type { ConfigGame, EXPANSION, ITEM_TYPE } from "../types";
@@ -66,7 +66,7 @@ const initGameConfig = {
 };
 const GameContext = createContext<ConfigGame>(initGameConfig);
 const GameDispatchContext = createContext<Dispatch<Action>>(
-  {} as Dispatch<Action>
+  {} as Dispatch<Action>,
 );
 
 export const useGame = () => useContext(GameContext);
@@ -82,21 +82,21 @@ const gameReducer = (game: ConfigGame, action: Action): ConfigGame => {
               return [key, action.check];
             }
             return [key, v];
-          })
+          }),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };
     case "check-all-expansion":
       return {
         configExpansion: Object.fromEntries(
-          Object.entries(game.configExpansion).map(([key, _]) => [key, true])
+          Object.entries(game.configExpansion).map(([key, _]) => [key, true]),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };
     case "uncheck-all-expansion":
       return {
         configExpansion: Object.fromEntries(
-          Object.entries(game.configExpansion).map(([key, _]) => [key, false])
+          Object.entries(game.configExpansion).map(([key, _]) => [key, false]),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };

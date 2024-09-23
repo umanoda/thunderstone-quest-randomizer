@@ -1,4 +1,4 @@
-import { EXPANSIONS, type EXPANSION } from "../types";
+import { type EXPANSION, EXPANSIONS } from "../types";
 import { useGame, useGameDispatch } from "./GameContext";
 
 const SelectExpansionCheckbox = ({
@@ -10,7 +10,7 @@ const SelectExpansionCheckbox = ({
   checked: boolean;
   dispatch: ReturnType<typeof useGameDispatch>;
 }) => {
-  const expansion = EXPANSIONS[expansionNumber as EXPANSION];
+  const expansion = EXPANSIONS.find((exp) => exp.number === expansionNumber);
   if (!expansion) return;
 
   return (
@@ -61,7 +61,7 @@ export const ExpansionSelector = () => {
             key={key}
             dispatch={dispatch}
             checked={v}
-            expansionNumber={key as EXPANSION}
+            expansionNumber={Number(key) as EXPANSION}
           />
         );
       })}

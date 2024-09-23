@@ -3,7 +3,7 @@ import type { EXPANSION } from "./consts";
 export type ConfigGame = {
   configExpansion: ConfigExpansion;
   configMarketplace: ConfigMarketplace;
-}
+};
 
 export type ConfigMarketplace = {
   numOfWeapons: number;
