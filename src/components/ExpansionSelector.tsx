@@ -18,7 +18,7 @@ const SelectExpansionCheckbox = ({
       <label style={{ gap: "2px", cursor: "pointer" }}>
         <input
           type="checkbox"
-          checked={checked}
+          defaultChecked={checked}
           onClick={() => {
             dispatch({
               type: "change-expansion",
