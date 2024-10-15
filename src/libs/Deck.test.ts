@@ -4,8 +4,10 @@ import { Deck } from "./Deck";
 test("new", () => {
   // blank
   expect(new Deck<string>([]).deck).toStrictEqual([]);
+
   // native type array
   expect(new Deck<number>([1, 2, 3, 100]).deck).toStrictEqual([1, 2, 3, 100]);
+
   // object array
   expect(
     new Deck<{ [k: string]: number }>([{ a: 1 }, { a: 2 }, { b: 3 }, { c: 4 }])
