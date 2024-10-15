@@ -25,7 +25,15 @@ export class Deck<T> {
   }
 
   shuffle(): void {
-    this._deck.sort(() => Math.random() - 0.5);
+    const array = this.deck;
+
+    // shuffle using Fisher-Yates shuffle
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    this._deck = array;
+
     this._cursor = 0;
   }
 }
