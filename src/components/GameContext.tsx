@@ -71,7 +71,7 @@ const initGameConfig = {
 };
 const GameContext = createContext<ConfigGame>(initGameConfig);
 const GameDispatchContext = createContext<Dispatch<Action>>(
-  {} as Dispatch<Action>
+  {} as Dispatch<Action>,
 );
 
 export const useGame = () => useContext(GameContext);
@@ -80,7 +80,7 @@ export const useGameDispatch = () => useContext(GameDispatchContext);
 const nextMarketplace = (
   oldMarketplace: ConfigMarketplace,
   changeType: ITEM_TYPE,
-  numOfCard: number
+  numOfCard: number,
 ): ConfigMarketplace => {
   let numOfWeapons = oldMarketplace.numOfWeapons;
   let numOfMagics = oldMarketplace.numOfMagics;
@@ -121,21 +121,21 @@ const gameReducer = (game: ConfigGame, action: Action): ConfigGame => {
               return [key, action.check];
             }
             return [key, v];
-          })
+          }),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };
     case "check-all-expansion":
       return {
         configExpansion: Object.fromEntries(
-          Object.entries(game.configExpansion).map(([key, _]) => [key, true])
+          Object.entries(game.configExpansion).map(([key, _]) => [key, true]),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };
     case "uncheck-all-expansion":
       return {
         configExpansion: Object.fromEntries(
-          Object.entries(game.configExpansion).map(([key, _]) => [key, false])
+          Object.entries(game.configExpansion).map(([key, _]) => [key, false]),
         ) as Record<EXPANSION, boolean>,
         configMarketplace: game.configMarketplace,
       };
@@ -145,7 +145,7 @@ const gameReducer = (game: ConfigGame, action: Action): ConfigGame => {
         configMarketplace: nextMarketplace(
           game.configMarketplace,
           action.card,
-          action.number
+          action.number,
         ),
       };
     default:
